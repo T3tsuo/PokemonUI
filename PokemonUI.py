@@ -1,7 +1,7 @@
 import httpimport
 
 
-n = input("1 for EverstoneFarming, 2 for PlantorWater, 3 for LevelFarming: ")
+n = input("1 for EverstoneFarming, 2 for PlantorWater, 3 for LevelFarming, 4 to ToggleRun: ")
 
 if n == "1":
     with httpimport.github_repo(username='T3tsuo', repo='EverstoneFarming', ref='main'):
@@ -15,3 +15,7 @@ elif n == "3":
     with httpimport.github_repo(username='T3tsuo', repo='LevelFarming', ref='main'):
         import LevelFarming
     LevelFarming.run()
+elif n == "4":
+    with httpimport.github_repo(username='T3tsuo', repo='LevelFarming', ref='main'):
+        import ToggleRun
+    ToggleRun.run()
