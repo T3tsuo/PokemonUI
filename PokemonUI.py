@@ -61,6 +61,9 @@ class Ui_PokemonUI(object):
         self.plantOrWater.clicked.connect(self.load_plantorwater_window)
         self.plantOrWater.clicked.connect(PokemonUI.close)
         self.plantOrWater.setAutoDefault(True)
+        self.levelFarming.clicked.connect(self.load_levelfarming_window)
+        self.levelFarming.clicked.connect(PokemonUI.close)
+        self.levelFarming.setAutoDefault(True)
 
 
     def load_everstone_farming_window(self):
@@ -75,6 +78,14 @@ class Ui_PokemonUI(object):
         self.window = QtWidgets.QMainWindow()
         from PlantorWaterWindow import Ui_PlantorWaterWindow
         self.ui = Ui_PlantorWaterWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+
+    def load_levelfarming_window(self):
+        self.window = QtWidgets.QMainWindow()
+        from LevelFarmingWindow import Ui_LevelFarming
+        self.ui = Ui_LevelFarming()
         self.ui.setupUi(self.window)
         self.window.show()
 
