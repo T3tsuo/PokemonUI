@@ -92,6 +92,7 @@ class Ui_EverstoneFarming(object):
         font.setPointSize(18)
         self.is_running.setFont(font)
         self.is_running.hide()
+        self.is_running.setText("Running...")
         self.is_running.adjustSize()
         self.is_running.move(EverstoneFarmingWindow.width() // 2 - self.is_running.width() // 2,
                              EverstoneFarmingWindow.height() * 2 // 3 - self.is_running.height())
@@ -130,10 +131,6 @@ class Ui_EverstoneFarming(object):
 
             self.start_button.hide()
             self.stop_button.show()
-            self.is_running.setText("Running...")
-            self.is_running.adjustSize()
-            self.is_running.move(window.width() // 2 - self.is_running.width() // 2,
-                                 window.height() * 2 // 3 - self.is_running.height())
             self.is_running.show()
 
     def stop_everstone_farming(self):

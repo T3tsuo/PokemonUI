@@ -85,6 +85,7 @@ class Ui_LevelFarming(object):
         font.setPointSize(18)
         self.is_running.setFont(font)
         self.is_running.hide()
+        self.is_running.setText("Running...")
         self.is_running.adjustSize()
         self.is_running.move(LevelFarmingWindow.width() // 2 - self.is_running.width() // 2,
                              LevelFarmingWindow.height() * 2 // 3 - self.is_running.height())
@@ -120,14 +121,8 @@ class Ui_LevelFarming(object):
             is_alive_worker.signal.finished.connect(self.hide_status)
             self.threadpool.start(is_alive_worker)
 
-            self.sweetScentInput.returnPressed.connect(self.run_level_farming)
-
             self.start_button.hide()
             self.stop_button.show()
-            self.is_running.setText("Running...")
-            self.is_running.adjustSize()
-            self.is_running.move(window.width() // 2 - self.is_running.width() // 2,
-                                 window.height() * 2 // 3 - self.is_running.height())
             self.is_running.show()
 
     def stop_level_farming(self):

@@ -14,7 +14,7 @@ from thread_workers import *
 plantorwater_process = None
 window = None
 place_mapping = {'Mistralton': 1, 'Abundant Shrine': 2}
-interact_mapping = {'Water': 'water', 'Plant': 'plant'}
+interact_mapping = {'Water': 'water', 'Pickup and Plant': 'plant'}
 
 
 class CheckProcess(QRunnable):
@@ -59,7 +59,7 @@ class Ui_PlantorWaterWindow(object):
                                                PlantorWaterWindow.height() // 2 - 20, 170, 40))
         self.interact.setStyleSheet("background-color: white;")
         self.interact.addItem("Water")
-        self.interact.addItem("Plant")
+        self.interact.addItem("Pickup and Plant")
         self.start_button = QtWidgets.QPushButton(parent=self.centralwidget)
         self.start_button.setStyleSheet("color: black; background-color: grey;")
         font = QtGui.QFont()
@@ -88,6 +88,7 @@ class Ui_PlantorWaterWindow(object):
         font.setPointSize(18)
         self.is_running.setFont(font)
         self.is_running.hide()
+        self.is_running.setText("Running...")
         self.is_running.adjustSize()
         self.is_running.move(PlantorWaterWindow.width() // 2 - self.is_running.width() // 2,
                              PlantorWaterWindow.height() * 2 // 3 - self.is_running.height())
@@ -128,10 +129,6 @@ class Ui_PlantorWaterWindow(object):
 
         self.start_button.hide()
         self.stop_button.show()
-        self.is_running.setText("Running...")
-        self.is_running.adjustSize()
-        self.is_running.move(window.width() // 2 - self.is_running.width() // 2,
-                             window.height() * 2 // 3 - self.is_running.height())
         self.is_running.show()
 
     def stop_plantorwater(self):

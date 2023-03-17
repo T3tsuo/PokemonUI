@@ -16,7 +16,16 @@ class Ui_PokemonUI(object):
         PokemonUI.setStyleSheet("background-color: black;")
         PokemonUI.setWindowTitle("PokemonUI")
         self.centralwidget = QtWidgets.QWidget(parent=PokemonUI)
-        self.centralwidget.setObjectName("centralwidget")
+        self.title = QtWidgets.QLabel(parent=self.centralwidget)
+        self.title.setStyleSheet("color: #cccccc;")
+        font = QtGui.QFont()
+        font.setFamily("Tw Cen MT")
+        font.setPointSize(26)
+        self.title.setFont(font)
+        self.title.setText("PokemonUI")
+        self.title.adjustSize()
+        self.title.move(PokemonUI.width() // 2 - self.title.width() // 2,
+                        PokemonUI.height() // 4 - self.title.height())
         self.everstoneFarming = QtWidgets.QPushButton(parent=self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
@@ -25,7 +34,7 @@ class Ui_PokemonUI(object):
         self.everstoneFarming.setStyleSheet("color: black; background-color: grey;")
         self.everstoneFarming.setFont(font)
         self.everstoneFarming.setGeometry(QtCore.QRect(PokemonUI.width() // 2 - 140 // 2,
-                                                       PokemonUI.height() // 4 - 50 // 2, 140, 50))
+                                                       PokemonUI.height() // 2 - 50 // 2, 140, 50))
         self.levelFarming = QtWidgets.QPushButton(parent=self.centralwidget)
         self.levelFarming.setText("LevelFarming")
         self.levelFarming.setStyleSheet("color: black; background-color: grey;")
@@ -64,6 +73,9 @@ class Ui_PokemonUI(object):
         self.levelFarming.clicked.connect(self.load_levelfarming_window)
         self.levelFarming.clicked.connect(PokemonUI.close)
         self.levelFarming.setAutoDefault(True)
+        self.toggleRun.clicked.connect(self.load_togglerun_window)
+        self.toggleRun.clicked.connect(PokemonUI.close)
+        self.toggleRun.setAutoDefault(True)
 
 
     def load_everstone_farming_window(self):
@@ -86,6 +98,13 @@ class Ui_PokemonUI(object):
         self.window = QtWidgets.QMainWindow()
         from LevelFarmingWindow import Ui_LevelFarming
         self.ui = Ui_LevelFarming()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def load_togglerun_window(self):
+        self.window = QtWidgets.QMainWindow()
+        from ToggleRunWindow import Ui_ToggleRun
+        self.ui = Ui_ToggleRun()
         self.ui.setupUi(self.window)
         self.window.show()
 
