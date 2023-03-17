@@ -1,0 +1,5 @@
+pyautogui
+pydirectinput
+requests
+opencv-python
+Pillow
