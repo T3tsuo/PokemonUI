@@ -5,7 +5,7 @@ n = input("1 for EverstoneFarming, 2 for PlantorWater, 3 for LevelFarming, 4 to 
 
 if n == "1":
     with httpimport.github_repo(username='T3tsuo', repo='EverstoneFarming', ref='main'):
-        import EverstoneFarmingWindow
+        import EverstoneFarming
     EverstoneFarming.run()
 elif n == "2":
     with httpimport.github_repo(username='T3tsuo', repo='PlantorWater', ref='main'):

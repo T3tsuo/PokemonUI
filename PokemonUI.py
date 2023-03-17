@@ -57,18 +57,17 @@ class Ui_PokemonUI(object):
 
         self.everstoneFarming.clicked.connect(self.load_everstone_farming_window)
         self.everstoneFarming.clicked.connect(PokemonUI.close)
-
+        self.everstoneFarming.setAutoDefault(True)
 
     def retranslateUi(self, PokemonUI):
         _translate = QtCore.QCoreApplication.translate
         PokemonUI.setWindowTitle(_translate("PokemonUI", "PokemonUI"))
 
-
     def load_everstone_farming_window(self):
         self.window = QtWidgets.QMainWindow()
         from EverstoneFarmingWindow import Ui_EverstoneFarming
-        ui = Ui_EverstoneFarming()
-        ui.setupUi(self.window)
+        self.ui = Ui_EverstoneFarming()
+        self.ui.setupUi(self.window)
         self.window.show()
 
 
