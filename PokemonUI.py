@@ -58,6 +58,9 @@ class Ui_PokemonUI(object):
         self.everstoneFarming.clicked.connect(self.load_everstone_farming_window)
         self.everstoneFarming.clicked.connect(PokemonUI.close)
         self.everstoneFarming.setAutoDefault(True)
+        self.plantOrWater.clicked.connect(self.load_plantorwater_window)
+        self.plantOrWater.clicked.connect(PokemonUI.close)
+        self.plantOrWater.setAutoDefault(True)
 
     def retranslateUi(self, PokemonUI):
         _translate = QtCore.QCoreApplication.translate
@@ -67,6 +70,14 @@ class Ui_PokemonUI(object):
         self.window = QtWidgets.QMainWindow()
         from EverstoneFarmingWindow import Ui_EverstoneFarming
         self.ui = Ui_EverstoneFarming()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+
+    def load_plantorwater_window(self):
+        self.window = QtWidgets.QMainWindow()
+        from PlantorWaterWindow import Ui_PlantorWaterWindow
+        self.ui = Ui_PlantorWaterWindow()
         self.ui.setupUi(self.window)
         self.window.show()
 
