@@ -17,7 +17,6 @@ window = None
 
 class WorkerSignal(QObject):
     finished = pyqtSignal()
-    value = pyqtSignal(str)
 
 
 class CheckProcess(QRunnable):
