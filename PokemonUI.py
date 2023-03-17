@@ -14,6 +14,7 @@ class Ui_PokemonUI(object):
         PokemonUI.setObjectName("PokemonUI")
         PokemonUI.setFixedSize(800, 600)
         PokemonUI.setStyleSheet("background-color: black;")
+        PokemonUI.setWindowTitle("PokemonUI")
         self.centralwidget = QtWidgets.QWidget(parent=PokemonUI)
         self.centralwidget.setObjectName("centralwidget")
         self.everstoneFarming = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -52,7 +53,6 @@ class Ui_PokemonUI(object):
         self.statusbar.setObjectName("statusbar")
         PokemonUI.setStatusBar(self.statusbar)
 
-        self.retranslateUi(PokemonUI)
         QtCore.QMetaObject.connectSlotsByName(PokemonUI)
 
         self.everstoneFarming.clicked.connect(self.load_everstone_farming_window)
@@ -62,9 +62,6 @@ class Ui_PokemonUI(object):
         self.plantOrWater.clicked.connect(PokemonUI.close)
         self.plantOrWater.setAutoDefault(True)
 
-    def retranslateUi(self, PokemonUI):
-        _translate = QtCore.QCoreApplication.translate
-        PokemonUI.setWindowTitle(_translate("PokemonUI", "PokemonUI"))
 
     def load_everstone_farming_window(self):
         self.window = QtWidgets.QMainWindow()

@@ -8,15 +8,12 @@
 import httpimport
 import multiprocessing
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtCore import *
 import time
+
+from thread_workers import *
 
 everstone_process = None
 window = None
-
-
-class WorkerSignal(QObject):
-    finished = pyqtSignal()
 
 
 class CheckProcess(QRunnable):
@@ -36,6 +33,7 @@ class Ui_EverstoneFarming(object):
         EverstoneFarmingWindow.setObjectName("MainWindow")
         EverstoneFarmingWindow.setFixedSize(800, 600)
         EverstoneFarmingWindow.setStyleSheet("background-color: black;")
+        EverstoneFarmingWindow.setWindowTitle("PokemonUI")
         window = EverstoneFarmingWindow
         self.centralwidget = QtWidgets.QWidget(parent=EverstoneFarmingWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -72,15 +70,16 @@ class Ui_EverstoneFarming(object):
         font.setFamily("Tw Cen MT")
         font.setPointSize(14)
         self.start_button.setFont(font)
-        self.start_button.setGeometry(QtCore.QRect(EverstoneFarmingWindow.width() // 2 - 120 - 20,
+        self.start_button.setGeometry(QtCore.QRect(EverstoneFarmingWindow.width() // 2 - 60,
                                                    EverstoneFarmingWindow.height() * 3 // 4 - 45 // 2, 120, 45))
         self.start_button.setText("Start")
         self.stop_button = QtWidgets.QPushButton(parent=self.centralwidget)
         self.stop_button.setStyleSheet("color: black; background-color: grey;")
         self.stop_button.setFont(font)
-        self.stop_button.setGeometry(QtCore.QRect(EverstoneFarmingWindow.width() // 2 + 20,
+        self.stop_button.setGeometry(QtCore.QRect(EverstoneFarmingWindow.width() // 2 - 60,
                                                   EverstoneFarmingWindow.height() * 3 // 4 - 45 // 2, 120, 45))
         self.stop_button.setText("Stop")
+        self.stop_button.hide()
         self.backBtn = QtWidgets.QPushButton(self.centralwidget)
         self.backBtn.setGeometry(QtCore.QRect(0, 0, 70, 30))
         self.backBtn.setText("Esc")
@@ -107,15 +106,12 @@ class Ui_EverstoneFarming(object):
 
         self.backBtn.setShortcut("Esc")
         self.backBtn.clicked.connect(self.open_PokemonUI)
+        self.backBtn.clicked.connect(self.stop_everstone_farming)
         self.backBtn.clicked.connect(EverstoneFarmingWindow.close)
         self.backBtn.setAutoDefault(True)
 
-        self.retranslateUi(EverstoneFarmingWindow)
         QtCore.QMetaObject.connectSlotsByName(EverstoneFarmingWindow)
 
-    def retranslateUi(self, EverstoneFarmingWindow):
-        _translate = QtCore.QCoreApplication.translate
-        EverstoneFarmingWindow.setWindowTitle(_translate("EverstoneFarming", "EverstoneFarming"))
 
     def run_everstone_farming(self):
         global everstone_process, window
@@ -129,6 +125,8 @@ class Ui_EverstoneFarming(object):
             is_alive_worker.signal.finished.connect(self.hide_status)
             self.threadpool.start(is_alive_worker)
 
+            self.start_button.hide()
+            self.stop_button.show()
             self.is_running.setText("Running...")
             self.is_running.adjustSize()
             self.is_running.move(window.width() // 2 - self.is_running.width() // 2,
@@ -142,6 +140,8 @@ class Ui_EverstoneFarming(object):
 
     def hide_status(self):
         self.is_running.hide()
+        self.stop_button.hide()
+        self.start_button.show()
 
     def open_PokemonUI(self):
         self.temp_window = QtWidgets.QMainWindow()
