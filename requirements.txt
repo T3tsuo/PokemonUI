@@ -1,1 +1,2 @@
 httpimport==1.3.0
+PyQt6==6.4.2
