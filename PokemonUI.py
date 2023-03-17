@@ -7,6 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from multiprocessing import freeze_support
 
 
 class Ui_PokemonUI(object):
@@ -111,7 +112,7 @@ class Ui_PokemonUI(object):
 
 if __name__ == "__main__":
     import sys
-
+    freeze_support()
     app = QtWidgets.QApplication(sys.argv)
     PokemonUI = QtWidgets.QMainWindow()
     ui = Ui_PokemonUI()
