@@ -6,7 +6,6 @@ It dynamically pulls them down from their own repos so if I change the scripts, 
 
 ## Python Configuration:
 * Tested with Python 3.11.2
-* run: pip install -r requirements.txt
 
 ## Where to start running the code:
 * Make sure your character is running and not walking.
