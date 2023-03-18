@@ -65,7 +65,7 @@ class Ui_ToggleRun(object):
         self.start_button.setStyleSheet("color: black; background-color: grey;")
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
-        font.setPointSize(14)
+        font.setPointSize(10)
         self.start_button.setFont(font)
         self.start_button.setGeometry(QtCore.QRect(ToggleRunWindow.width() // 2 - 60,
                                                    ToggleRunWindow.height() // 2 - 45 // 2, 120, 45))
@@ -86,7 +86,7 @@ class Ui_ToggleRun(object):
         self.is_running.setStyleSheet("color: #cccccc;")
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
-        font.setPointSize(18)
+        font.setPointSize(14)
         self.is_running.setFont(font)
         self.is_running.hide()
         self.is_running.setText("Running...")

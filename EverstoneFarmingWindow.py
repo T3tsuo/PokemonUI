@@ -65,7 +65,7 @@ class Ui_EverstoneFarming(object):
         self.sweetScentInput = QtWidgets.QLineEdit(parent=self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
-        font.setPointSize(12)
+        font.setPointSize(8)
         self.sweetScentInput.setFont(font)
         self.sweetScentInput.setStyleSheet("background-color: white;")
         self.sweetScentInput.setGeometry(QtCore.QRect(EverstoneFarmingWindow.width() // 2 - 170,
@@ -83,7 +83,7 @@ class Ui_EverstoneFarming(object):
         self.start_button.setStyleSheet("color: black; background-color: grey;")
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
-        font.setPointSize(14)
+        font.setPointSize(10)
         self.start_button.setFont(font)
         self.start_button.setGeometry(QtCore.QRect(EverstoneFarmingWindow.width() // 2 - 60,
                                                    EverstoneFarmingWindow.height() * 3 // 4 - 45 // 2, 120, 45))
@@ -104,7 +104,7 @@ class Ui_EverstoneFarming(object):
         self.is_running.setStyleSheet("color: #cccccc;")
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
-        font.setPointSize(18)
+        font.setPointSize(14)
         self.is_running.setFont(font)
         self.is_running.hide()
         self.is_running.setText("Running...")

@@ -51,7 +51,7 @@ class Ui_PokemonUI(object):
         self.everstoneFarming = QtWidgets.QPushButton(parent=self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
-        font.setPointSize(14)
+        font.setPointSize(10)
         self.everstoneFarming.setText("EverstoneFarming")
         self.everstoneFarming.setStyleSheet("color: black; background-color: grey;")
         self.everstoneFarming.setFont(font)
