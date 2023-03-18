@@ -7,15 +7,36 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtCore import QUrl
+from PyQt6.QtGui import QPixmap, QIcon
+from PyQt6.QtNetwork import QNetworkAccessManager, QNetworkRequest
 from multiprocessing import freeze_support
+
+
+window = None
+
+
+def set_window_icon_from_response(http_response):
+    global window
+    pixmap = QPixmap()
+    pixmap.loadFromData(http_response.readAll())
+    icon = QIcon(pixmap)
+    if window is not None:
+        window.setWindowIcon(icon)
 
 
 class Ui_PokemonUI(object):
     def setupUi(self, PokemonUI):
+        global window
         PokemonUI.setObjectName("PokemonUI")
         PokemonUI.setFixedSize(800, 600)
         PokemonUI.setStyleSheet("background-color: black;")
         PokemonUI.setWindowTitle("PokemonUI")
+        window = PokemonUI
+        self.nam = QNetworkAccessManager()
+        self.nam.finished.connect(set_window_icon_from_response)
+        self.nam.get(QNetworkRequest(QUrl("https://raw.githubusercontent.com/"
+                                          "T3tsuo/PokemonUI/main/cache/poke.ico")))
         self.centralwidget = QtWidgets.QWidget(parent=PokemonUI)
         self.title = QtWidgets.QLabel(parent=self.centralwidget)
         self.title.setStyleSheet("color: #cccccc;")
