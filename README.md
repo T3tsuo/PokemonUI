@@ -52,3 +52,31 @@ It dynamically pulls them down from their own repos so if I change the scripts, 
 ## Start script:
 * As soon as you press start, make sure you click on the game.
     * If you choose plant, the first plant it will make you choose the seeds manually, you have 10 seconds before the script goes to the next plant and it will do those and the rest automatically.
+    
+# LevelFarming Lacunosa Town (Unova)
+
+## Python Configuration:
+* Tested with Python 3.11.2
+* run: pip install -r requirements.txt
+
+## Where to start running the code:
+* Make sure your character is running and not walking.
+* Start at the nurse in the pokecenter at Lacunosa Town.
+* Sweet scent uses 5pp per usage. So if you have 32pp then enter: 6
+    * If you have 20pp, then enter: 4
+* As soon as you hit start, make sure you click on the game.
+
+## Pokemon Team Composition:
+* First pokemon has Surf/Earthquake in second slot and can 1 shot kill rhydon hordes.
+* Pokemon with Sweet Scent must be in your party.
+* Pokemon with Teleport must be in your party.
+
+## Key Slots:
+* Bike in 1st key slot.
+* Sweet scent in 4th key slot.
+* Teleport in 5th key slot.
+
+## Game Configuration:
+* Make battle log as minimized as possible and lock the chat.
+* Set window size: 1280x720
+
