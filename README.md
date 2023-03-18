@@ -33,7 +33,7 @@ It dynamically pulls them down from their own repos so if I change the scripts, 
 * Make battle log as minimized as possible and lock the chat.
 * Set window size: 1280x720 in Settings
 
-# Mistralton and Abundant Shrine plant or water soil (Unova)
+# Plant or Water, Mistralton and Abundant Shrine (Unova)
 
 ## Python Configuration:
 * Tested with Python 3.11.2
