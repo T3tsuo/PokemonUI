@@ -16,6 +16,7 @@ from thread_workers import *
 
 level_process = None
 window = None
+app = None
 
 
 def set_window_icon_from_response(http_response):
@@ -38,7 +39,18 @@ class CheckProcess(QRunnable):
         self.signal.finished.emit()
 
 
+def stop_level_farming():
+    global level_process
+    if level_process is not None and level_process.is_alive():
+        level_process.terminate()
+
+
 class Ui_LevelFarming(object):
+
+    def __init__(self, x):
+        global app
+        app = x
+
     def setupUi(self, LevelFarmingWindow):
         global window
         LevelFarmingWindow.setFixedSize(800, 600)
@@ -113,15 +125,14 @@ class Ui_LevelFarming(object):
         self.start_button.clicked.connect(self.run_level_farming)
         self.start_button.setAutoDefault(True)
 
-        self.stop_button.clicked.connect(self.stop_level_farming)
+        self.stop_button.clicked.connect(stop_level_farming)
         self.stop_button.setAutoDefault(True)
 
         self.backBtn.setShortcut("Esc")
         self.backBtn.clicked.connect(self.open_PokemonUI)
-        self.backBtn.clicked.connect(self.stop_level_farming)
+        self.backBtn.clicked.connect(stop_level_farming)
         self.backBtn.clicked.connect(LevelFarmingWindow.close)
         self.backBtn.setAutoDefault(True)
-
 
     def run_level_farming(self):
         global level_process, window
@@ -139,21 +150,16 @@ class Ui_LevelFarming(object):
             self.stop_button.show()
             self.is_running.show()
 
-    def stop_level_farming(self):
-        global level_process
-        if level_process is not None and level_process.is_alive():
-            level_process.terminate()
-
     def hide_status(self):
         self.is_running.hide()
         self.stop_button.hide()
         self.start_button.show()
 
-
     def open_PokemonUI(self):
+        global app
         self.temp_window = QtWidgets.QMainWindow()
         from PokemonUI import Ui_PokemonUI
-        self.ui = Ui_PokemonUI()
+        self.ui = Ui_PokemonUI(app)
         self.ui.setupUi(self.temp_window)
         self.temp_window.show()
 

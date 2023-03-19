@@ -16,6 +16,7 @@ from thread_workers import *
 
 plantorwater_process = None
 window = None
+app = None
 place_mapping = {'Mistralton': 1, 'Abundant Shrine': 2}
 interact_mapping = {'Water': 'water', 'Pickup and Plant': 'plant'}
 
@@ -40,7 +41,18 @@ class CheckProcess(QRunnable):
         self.signal.finished.emit()
 
 
+def stop_plantorwater():
+    global plantorwater_process
+    if plantorwater_process is not None and plantorwater_process.is_alive():
+        plantorwater_process.terminate()
+
+
 class Ui_PlantorWaterWindow(object):
+
+    def __init__(self, x):
+        global app
+        app = x
+
     def setupUi(self, PlantorWaterWindow):
         global window
         PlantorWaterWindow.setObjectName("MainWindow")
@@ -122,12 +134,12 @@ class Ui_PlantorWaterWindow(object):
         self.start_button.clicked.connect(self.run_plantorwater)
         self.start_button.setAutoDefault(True)
 
-        self.stop_button.clicked.connect(self.stop_plantorwater)
+        self.stop_button.clicked.connect(stop_plantorwater)
         self.stop_button.setAutoDefault(True)
 
         self.backBtn.setShortcut("Esc")
         self.backBtn.clicked.connect(self.open_PokemonUI)
-        self.backBtn.clicked.connect(self.stop_plantorwater)
+        self.backBtn.clicked.connect(stop_plantorwater)
         self.backBtn.clicked.connect(PlantorWaterWindow.close)
         self.backBtn.setAutoDefault(True)
 
@@ -147,20 +159,16 @@ class Ui_PlantorWaterWindow(object):
         self.stop_button.show()
         self.is_running.show()
 
-    def stop_plantorwater(self):
-        global plantorwater_process
-        if plantorwater_process is not None and plantorwater_process.is_alive():
-            plantorwater_process.terminate()
-
     def hide_status(self):
         self.is_running.hide()
         self.stop_button.hide()
         self.start_button.show()
 
     def open_PokemonUI(self):
+        global app
         self.temp_window = QtWidgets.QMainWindow()
         from PokemonUI import Ui_PokemonUI
-        self.ui = Ui_PokemonUI()
+        self.ui = Ui_PokemonUI(app)
         self.ui.setupUi(self.temp_window)
         self.temp_window.show()
 

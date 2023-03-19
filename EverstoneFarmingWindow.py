@@ -16,6 +16,7 @@ from thread_workers import *
 
 everstone_process = None
 window = None
+app = None
 
 
 def set_window_icon_from_response(http_response):
@@ -38,7 +39,18 @@ class CheckProcess(QRunnable):
         self.signal.finished.emit()
 
 
+def stop_everstone_farming():
+    global everstone_process
+    if everstone_process is not None and everstone_process.is_alive():
+        everstone_process.terminate()
+
+
 class Ui_EverstoneFarming(object):
+
+    def __init__(self, x):
+        global app
+        app = x
+
     def setupUi(self, EverstoneFarmingWindow):
         global window
         EverstoneFarmingWindow.setObjectName("MainWindow")
@@ -120,17 +132,16 @@ class Ui_EverstoneFarming(object):
         self.start_button.clicked.connect(self.run_everstone_farming)
         self.start_button.setAutoDefault(True)
 
-        self.stop_button.clicked.connect(self.stop_everstone_farming)
+        self.stop_button.clicked.connect(stop_everstone_farming)
         self.stop_button.setAutoDefault(True)
 
         self.backBtn.setShortcut("Esc")
         self.backBtn.clicked.connect(self.open_PokemonUI)
-        self.backBtn.clicked.connect(self.stop_everstone_farming)
+        self.backBtn.clicked.connect(stop_everstone_farming)
         self.backBtn.clicked.connect(EverstoneFarmingWindow.close)
         self.backBtn.setAutoDefault(True)
 
         QtCore.QMetaObject.connectSlotsByName(EverstoneFarmingWindow)
-
 
     def run_everstone_farming(self):
         global everstone_process, window
@@ -148,20 +159,16 @@ class Ui_EverstoneFarming(object):
             self.stop_button.show()
             self.is_running.show()
 
-    def stop_everstone_farming(self):
-        global everstone_process
-        if everstone_process is not None and everstone_process.is_alive():
-            everstone_process.terminate()
-
     def hide_status(self):
         self.is_running.hide()
         self.stop_button.hide()
         self.start_button.show()
 
     def open_PokemonUI(self):
+        global app
         self.temp_window = QtWidgets.QMainWindow()
         from PokemonUI import Ui_PokemonUI
-        self.ui = Ui_PokemonUI()
+        self.ui = Ui_PokemonUI(app)
         self.ui.setupUi(self.temp_window)
         self.temp_window.show()
 
