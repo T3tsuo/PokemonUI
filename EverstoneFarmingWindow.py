@@ -172,7 +172,7 @@ class Ui_EverstoneFarming(object):
         self.start_button.show()
 
     def open_PokemonUI(self):
-        global app, window_position, window
+        global app, window
         self.temp_window = QtWidgets.QMainWindow()
         from PokemonUI import Ui_PokemonUI
         self.ui = Ui_PokemonUI(app, window.pos())
