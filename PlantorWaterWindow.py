@@ -11,6 +11,7 @@ from PyQt6.QtNetwork import QNetworkAccessManager, QNetworkRequest
 import time
 import multiprocessing
 import httpimport
+import pickle
 
 from thread_workers import *
 
@@ -19,6 +20,7 @@ window = None
 app = None
 place_mapping = {'Mistralton': 1, 'Abundant Shrine': 2}
 interact_mapping = {'Water': 'water', 'Pickup and Plant': 'plant'}
+window_position = None
 
 
 def set_window_icon_from_response(http_response):
@@ -49,16 +51,19 @@ def stop_plantorwater():
 
 class Ui_PlantorWaterWindow(object):
 
-    def __init__(self, x):
-        global app
+    def __init__(self, x, y):
+        global app, window_position
         app = x
+        window_position = y
 
     def setupUi(self, PlantorWaterWindow):
-        global window
+        global window, window_position
         PlantorWaterWindow.setObjectName("MainWindow")
         PlantorWaterWindow.setFixedSize(800, 600)
         PlantorWaterWindow.setStyleSheet("background-color: black;")
         PlantorWaterWindow.setWindowTitle("PokemonUI")
+        if window_position is not None:
+            PlantorWaterWindow.move(window_position)
         window = PlantorWaterWindow
         self.nam = QNetworkAccessManager()
         self.nam.finished.connect(set_window_icon_from_response)
@@ -143,6 +148,8 @@ class Ui_PlantorWaterWindow(object):
         self.backBtn.clicked.connect(PlantorWaterWindow.close)
         self.backBtn.setAutoDefault(True)
 
+        app.aboutToQuit.connect(closeEvent)
+
     def run_plantorwater(self):
         global plantorwater_process, window
         plantorwater_process = multiprocessing.Process(target=run_script,
@@ -165,12 +172,19 @@ class Ui_PlantorWaterWindow(object):
         self.start_button.show()
 
     def open_PokemonUI(self):
-        global app
+        global app, window
         self.temp_window = QtWidgets.QMainWindow()
         from PokemonUI import Ui_PokemonUI
-        self.ui = Ui_PokemonUI(app)
+        self.ui = Ui_PokemonUI(app, window.pos())
         self.ui.setupUi(self.temp_window)
         self.temp_window.show()
+
+
+def closeEvent():
+    global window
+    pickle.dump(window.pos(), open("window_position.dat", "wb"))
+    for p in multiprocessing.active_children():
+        p.terminate()
 
 
 def run_script(place, interact):

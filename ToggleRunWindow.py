@@ -11,12 +11,14 @@ from PyQt6.QtNetwork import QNetworkAccessManager, QNetworkRequest
 import multiprocessing
 import time
 import httpimport
+import pickle
 
 from thread_workers import *
 
 toggle_process = None
 window = None
 app = None
+window_position = None
 
 
 def set_window_icon_from_response(http_response):
@@ -47,15 +49,18 @@ def stop_toggle():
 
 class Ui_ToggleRun(object):
 
-    def __init__(self, x):
-        global app
+    def __init__(self, x, y):
+        global app, window_position
         app = x
+        window_position = y
 
     def setupUi(self, ToggleRunWindow):
-        global window
+        global window, window_position
         ToggleRunWindow.setFixedSize(800, 600)
         ToggleRunWindow.setWindowTitle("PokemonUI")
         ToggleRunWindow.setStyleSheet("background-color: black;")
+        if window_position is not None:
+            ToggleRunWindow.move(window_position)
         window = ToggleRunWindow
         self.nam = QNetworkAccessManager()
         self.nam.finished.connect(set_window_icon_from_response)
@@ -120,6 +125,8 @@ class Ui_ToggleRun(object):
         self.backBtn.clicked.connect(ToggleRunWindow.close)
         self.backBtn.setAutoDefault(True)
 
+        app.aboutToQuit.connect(closeEvent)
+
         QtCore.QMetaObject.connectSlotsByName(ToggleRunWindow)
 
     def run_toggle(self):
@@ -142,12 +149,19 @@ class Ui_ToggleRun(object):
         self.start_button.show()
 
     def open_PokemonUI(self):
-        global app
+        global app, window
         self.temp_window = QtWidgets.QMainWindow()
         from PokemonUI import Ui_PokemonUI
-        self.ui = Ui_PokemonUI(app)
+        self.ui = Ui_PokemonUI(app, window.pos())
         self.ui.setupUi(self.temp_window)
         self.temp_window.show()
+
+
+def closeEvent():
+    global window
+    pickle.dump(window.pos(), open("window_position.dat", "wb"))
+    for p in multiprocessing.active_children():
+        p.terminate()
 
 
 def run_script():

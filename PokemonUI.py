@@ -10,10 +10,16 @@ from PyQt6.QtCore import QUrl
 from PyQt6.QtGui import QPixmap, QIcon
 from PyQt6.QtNetwork import QNetworkAccessManager, QNetworkRequest
 import multiprocessing
-
+import os
+import pickle
 
 window = None
 app = None
+
+if os.path.isfile("window_position.dat"):
+    window_position = pickle.load(open("window_position.dat", "rb"))
+else:
+    window_position = None
 
 
 def set_window_icon_from_response(http_response):
@@ -27,16 +33,19 @@ def set_window_icon_from_response(http_response):
 
 class Ui_PokemonUI(object):
 
-    def __init__(self, x):
-        global app
+    def __init__(self, x, y):
+        global app, window_position
         app = x
+        window_position = y
 
     def setupUi(self, PokemonUI):
-        global window, app
+        global window, app, window_position
         PokemonUI.setObjectName("PokemonUI")
         PokemonUI.setFixedSize(800, 600)
         PokemonUI.setStyleSheet("background-color: black;")
         PokemonUI.setWindowTitle("PokemonUI")
+        if window_position is not None:
+            PokemonUI.move(window_position)
         window = PokemonUI
         self.nam = QNetworkAccessManager()
         self.nam.finished.connect(set_window_icon_from_response)
@@ -106,43 +115,42 @@ class Ui_PokemonUI(object):
 
         app.aboutToQuit.connect(closeEvent)
 
-
     def load_everstone_farming_window(self):
-        global app
+        global app, window
         self.window = QtWidgets.QMainWindow()
         from EverstoneFarmingWindow import Ui_EverstoneFarming
-        self.ui = Ui_EverstoneFarming(app)
+        self.ui = Ui_EverstoneFarming(app, window.pos())
         self.ui.setupUi(self.window)
         self.window.show()
-
 
     def load_plantorwater_window(self):
-        global app
+        global app, window
         self.window = QtWidgets.QMainWindow()
         from PlantorWaterWindow import Ui_PlantorWaterWindow
-        self.ui = Ui_PlantorWaterWindow(app)
+        self.ui = Ui_PlantorWaterWindow(app, window.pos())
         self.ui.setupUi(self.window)
         self.window.show()
 
-
     def load_levelfarming_window(self):
-        global app
+        global app, window
         self.window = QtWidgets.QMainWindow()
         from LevelFarmingWindow import Ui_LevelFarming
-        self.ui = Ui_LevelFarming(app)
+        self.ui = Ui_LevelFarming(app, window.pos())
         self.ui.setupUi(self.window)
         self.window.show()
 
     def load_togglerun_window(self):
-        global app
+        global app, window
         self.window = QtWidgets.QMainWindow()
         from ToggleRunWindow import Ui_ToggleRun
-        self.ui = Ui_ToggleRun(app)
+        self.ui = Ui_ToggleRun(app, window.pos())
         self.ui.setupUi(self.window)
         self.window.show()
 
 
 def closeEvent():
+    global window
+    pickle.dump(window.pos(), open("window_position.dat", "wb"))
     for p in multiprocessing.active_children():
         p.terminate()
 
@@ -152,7 +160,7 @@ if __name__ == "__main__":
     multiprocessing.freeze_support()
     app = QtWidgets.QApplication(sys.argv)
     PokemonUI = QtWidgets.QMainWindow()
-    ui = Ui_PokemonUI(app)
+    ui = Ui_PokemonUI(app, window_position)
     ui.setupUi(PokemonUI)
     PokemonUI.show()
     sys.exit(app.exec())
