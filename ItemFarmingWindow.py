@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'EverstoneFarming.ui'
+# Form implementation generated from reading ui file 'itemFarming.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -15,7 +15,7 @@ import pickle
 
 from thread_workers import *
 
-everstone_process = None
+item_process = None
 window = None
 app = None
 window_position = None
@@ -35,39 +35,39 @@ class CheckProcess(QRunnable):
 
     @pyqtSlot()
     def run(self):
-        global everstone_process
-        while everstone_process.is_alive():
+        global item_process
+        while item_process.is_alive():
             time.sleep(0.1)
         self.signal.finished.emit()
 
 
-def stop_everstone_farming():
-    global everstone_process
-    if everstone_process is not None and everstone_process.is_alive():
-        everstone_process.terminate()
+def stop_item_farming():
+    global item_process
+    if item_process is not None and item_process.is_alive():
+        item_process.terminate()
 
 
-class Ui_EverstoneFarming(object):
+class Ui_ItemFarming(object):
 
     def __init__(self, x, y):
         global app, window_position
         app = x
         window_position = y
 
-    def setupUi(self, EverstoneFarmingWindow):
+    def setupUi(self, ItemFarmingWindow):
         global window, window_position
-        EverstoneFarmingWindow.setObjectName("MainWindow")
-        EverstoneFarmingWindow.setFixedSize(800, 600)
-        EverstoneFarmingWindow.setStyleSheet("background-color: black;")
-        EverstoneFarmingWindow.setWindowTitle("PokemonUI")
+        ItemFarmingWindow.setObjectName("MainWindow")
+        ItemFarmingWindow.setFixedSize(800, 600)
+        ItemFarmingWindow.setStyleSheet("background-color: black;")
+        ItemFarmingWindow.setWindowTitle("PokemonUI")
         if window_position is not None:
-            EverstoneFarmingWindow.move(window_position)
-        window = EverstoneFarmingWindow
+            ItemFarmingWindow.move(window_position)
+        window = ItemFarmingWindow
         self.nam = QNetworkAccessManager()
         self.nam.finished.connect(set_window_icon_from_response)
         self.nam.get(QNetworkRequest(QUrl("https://raw.githubusercontent.com/"
                                           "T3tsuo/PokemonUI/main/cache/poke.ico")))
-        self.centralwidget = QtWidgets.QWidget(parent=EverstoneFarmingWindow)
+        self.centralwidget = QtWidgets.QWidget(parent=ItemFarmingWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.title = QtWidgets.QLabel(parent=self.centralwidget)
         self.title.setStyleSheet("color: #cccccc;")
@@ -75,41 +75,50 @@ class Ui_EverstoneFarming(object):
         font.setFamily("Tw Cen MT")
         font.setPointSize(26)
         self.title.setFont(font)
-        self.title.setText("Everstone Farming")
+        self.title.setText("Item Farming")
         self.title.adjustSize()
-        self.title.move(EverstoneFarmingWindow.width() // 2 - self.title.width() // 2,
-                        EverstoneFarmingWindow.height() // 4 - self.title.height())
-        self.sweetScentInput = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.title.move(ItemFarmingWindow.width() // 2 - self.title.width() // 2,
+                        ItemFarmingWindow.height() // 4 - self.title.height())
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
-        font.setPointSize(8)
+        font.setPointSize(12)
+        self.item = QtWidgets.QComboBox(parent=self.centralwidget)
+        self.item.setGeometry(QtCore.QRect(ItemFarmingWindow.width() // 2 - 85,
+                                           ItemFarmingWindow.height() // 3 + 20, 170, 40))
+        self.item.setStyleSheet("background-color: white;")
+        self.item.addItem("--")
+        self.item.addItem("Everstone")
+        self.item.addItem("Amulet Coin")
+        self.item.model().sort(0)
+        self.item.setFont(font)
+        self.sweetScentInput = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.sweetScentInput.setFont(font)
         self.sweetScentInput.setStyleSheet("background-color: white;")
-        self.sweetScentInput.setGeometry(QtCore.QRect(EverstoneFarmingWindow.width() // 2 - 170,
-                                                      EverstoneFarmingWindow.height() // 2 - 20, 170, 40))
+        self.sweetScentInput.setGeometry(QtCore.QRect(ItemFarmingWindow.width() // 2 - 170,
+                                                      ItemFarmingWindow.height() // 2 - 20, 170, 40))
         self.sweetScentInput.setObjectName("sweetScentInput")
         self.sweetScentInput.setPlaceholderText("How many sweet scents")
         self.timeInput = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.timeInput.setFont(font)
         self.timeInput.setStyleSheet("background-color: white;")
-        self.timeInput.setGeometry(QtCore.QRect(EverstoneFarmingWindow.width() // 2,
-                                                EverstoneFarmingWindow.height() // 2 - 20, 170, 40))
+        self.timeInput.setGeometry(QtCore.QRect(ItemFarmingWindow.width() // 2,
+                                                ItemFarmingWindow.height() // 2 - 20, 170, 40))
         self.timeInput.setObjectName("timeInput")
         self.timeInput.setPlaceholderText("Duration length of script")
         self.start_button = QtWidgets.QPushButton(parent=self.centralwidget)
         self.start_button.setStyleSheet("color: black; background-color: grey;")
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
-        font.setPointSize(10)
+        font.setPointSize(14)
         self.start_button.setFont(font)
-        self.start_button.setGeometry(QtCore.QRect(EverstoneFarmingWindow.width() // 2 - 60,
-                                                   EverstoneFarmingWindow.height() * 3 // 4 - 45 // 2, 120, 45))
+        self.start_button.setGeometry(QtCore.QRect(ItemFarmingWindow.width() // 2 - 60,
+                                                   ItemFarmingWindow.height() * 3 // 4 - 45 // 2, 120, 45))
         self.start_button.setText("Start")
         self.stop_button = QtWidgets.QPushButton(parent=self.centralwidget)
         self.stop_button.setStyleSheet("color: black; background-color: grey;")
         self.stop_button.setFont(font)
-        self.stop_button.setGeometry(QtCore.QRect(EverstoneFarmingWindow.width() // 2 - 60,
-                                                  EverstoneFarmingWindow.height() * 3 // 4 - 45 // 2, 120, 45))
+        self.stop_button.setGeometry(QtCore.QRect(ItemFarmingWindow.width() // 2 - 60,
+                                                  ItemFarmingWindow.height() * 3 // 4 - 45 // 2, 120, 45))
         self.stop_button.setText("Stop")
         self.stop_button.hide()
         self.backBtn = QtWidgets.QPushButton(self.centralwidget)
@@ -126,37 +135,38 @@ class Ui_EverstoneFarming(object):
         self.is_running.hide()
         self.is_running.setText("Running...")
         self.is_running.adjustSize()
-        self.is_running.move(EverstoneFarmingWindow.width() // 2 - self.is_running.width() // 2,
-                             EverstoneFarmingWindow.height() * 2 // 3 - self.is_running.height())
-        EverstoneFarmingWindow.setCentralWidget(self.centralwidget)
+        self.is_running.move(ItemFarmingWindow.width() // 2 - self.is_running.width() // 2,
+                             ItemFarmingWindow.height() * 2 // 3 - self.is_running.height())
+        ItemFarmingWindow.setCentralWidget(self.centralwidget)
         self.threadpool = QThreadPool()
 
-        self.sweetScentInput.returnPressed.connect(self.run_everstone_farming)
-        self.timeInput.returnPressed.connect(self.run_everstone_farming)
+        self.sweetScentInput.returnPressed.connect(self.run_item_farming)
+        self.timeInput.returnPressed.connect(self.run_item_farming)
 
-        self.start_button.clicked.connect(self.run_everstone_farming)
+        self.start_button.clicked.connect(self.run_item_farming)
         self.start_button.setAutoDefault(True)
 
-        self.stop_button.clicked.connect(stop_everstone_farming)
+        self.stop_button.clicked.connect(stop_item_farming)
         self.stop_button.setAutoDefault(True)
 
         self.backBtn.setShortcut("Esc")
         self.backBtn.clicked.connect(self.open_PokemonUI)
-        self.backBtn.clicked.connect(stop_everstone_farming)
-        self.backBtn.clicked.connect(EverstoneFarmingWindow.close)
+        self.backBtn.clicked.connect(stop_item_farming)
+        self.backBtn.clicked.connect(ItemFarmingWindow.close)
         self.backBtn.setAutoDefault(True)
 
         app.aboutToQuit.connect(closeEvent)
 
-        QtCore.QMetaObject.connectSlotsByName(EverstoneFarmingWindow)
+        QtCore.QMetaObject.connectSlotsByName(ItemFarmingWindow)
 
-    def run_everstone_farming(self):
-        global everstone_process, window
-        if self.sweetScentInput.text() != "" and self.timeInput.text() != "":
-            everstone_process = multiprocessing.Process(target=run_script,
-                                                        args=[self.sweetScentInput.text(), self.timeInput.text()])
-            everstone_process.daemon = True
-            everstone_process.start()
+    def run_item_farming(self):
+        global item_process, window
+        if self.sweetScentInput.text() != "" and self.timeInput.text() != "" and str(self.item.currentText()) != "--":
+            item_process = multiprocessing.Process(target=run_script,
+                                                        args=[self.sweetScentInput.text(), self.timeInput.text(),
+                                                              str(self.item.currentText())])
+            item_process.daemon = True
+            item_process.start()
 
             is_alive_worker = CheckProcess()
             is_alive_worker.signal.finished.connect(self.hide_status)
@@ -187,7 +197,12 @@ def closeEvent():
         p.terminate()
 
 
-def run_script(n, t):
-    with httpimport.github_repo(username='T3tsuo', repo='EverstoneFarming', ref='main'):
-        import EverstoneFarming
-    EverstoneFarming.run(n, t)
+def run_script(n, t, item):
+    if item == "Everstone":
+        with httpimport.github_repo(username='T3tsuo', repo='EverstoneFarming', ref='main'):
+            import EverstoneFarming
+        EverstoneFarming.run(n, t)
+    elif item == "Amulet Coin":
+        with httpimport.github_repo(username='T3tsuo', repo='AmuletFarming', ref='main'):
+            import AmuletFarming
+        AmuletFarming.run(n, t)

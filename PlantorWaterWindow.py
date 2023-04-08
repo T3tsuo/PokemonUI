@@ -81,23 +81,32 @@ class Ui_PlantorWaterWindow(object):
         self.title.adjustSize()
         self.title.move(PlantorWaterWindow.width() // 2 - self.title.width() // 2,
                         PlantorWaterWindow.height() // 4 - self.title.height())
+        font = QtGui.QFont()
+        font.setFamily("Tw Cen MT")
+        font.setPointSize(12)
         self.place = QtWidgets.QComboBox(parent=self.centralwidget)
         self.place.setGeometry(QtCore.QRect(PlantorWaterWindow.width() // 2 - 170,
                                             PlantorWaterWindow.height() // 2 - 20, 170, 40))
         self.place.setStyleSheet("background-color: white;")
+        self.place.addItem("--")
         self.place.addItem("Mistralton")
         self.place.addItem("Abundant Shrine")
+        self.place.model().sort(0)
+        self.place.setFont(font)
         self.interact = QtWidgets.QComboBox(parent=self.centralwidget)
         self.interact.setGeometry(QtCore.QRect(PlantorWaterWindow.width() // 2,
                                                PlantorWaterWindow.height() // 2 - 20, 170, 40))
         self.interact.setStyleSheet("background-color: white;")
+        self.interact.addItem("--")
         self.interact.addItem("Water")
         self.interact.addItem("Pickup and Plant")
+        self.interact.model().sort(0)
+        self.interact.setFont(font)
         self.start_button = QtWidgets.QPushButton(parent=self.centralwidget)
         self.start_button.setStyleSheet("color: black; background-color: grey;")
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
-        font.setPointSize(10)
+        font.setPointSize(14)
         self.start_button.setFont(font)
         self.start_button.setGeometry(QtCore.QRect(PlantorWaterWindow.width() // 2 - 60,
                                                    PlantorWaterWindow.height() * 3 // 4 - 45 // 2, 120, 45))
@@ -152,19 +161,20 @@ class Ui_PlantorWaterWindow(object):
 
     def run_plantorwater(self):
         global plantorwater_process, window
-        plantorwater_process = multiprocessing.Process(target=run_script,
-                                                       args=[place_mapping[str(self.place.currentText())],
-                                                             interact_mapping[str(self.interact.currentText())]])
-        plantorwater_process.daemon = True
-        plantorwater_process.start()
+        if str(self.place.currentText()) != "--" and str(self.interact.currentText()) != "--":
+            plantorwater_process = multiprocessing.Process(target=run_script,
+                                                           args=[place_mapping[str(self.place.currentText())],
+                                                                 interact_mapping[str(self.interact.currentText())]])
+            plantorwater_process.daemon = True
+            plantorwater_process.start()
 
-        is_alive_worker = CheckProcess()
-        is_alive_worker.signal.finished.connect(self.hide_status)
-        self.threadpool.start(is_alive_worker)
+            is_alive_worker = CheckProcess()
+            is_alive_worker.signal.finished.connect(self.hide_status)
+            self.threadpool.start(is_alive_worker)
 
-        self.start_button.hide()
-        self.stop_button.show()
-        self.is_running.show()
+            self.start_button.hide()
+            self.stop_button.show()
+            self.is_running.show()
 
     def hide_status(self):
         self.is_running.hide()

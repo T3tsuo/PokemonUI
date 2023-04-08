@@ -62,14 +62,14 @@ class Ui_PokemonUI(object):
         self.title.adjustSize()
         self.title.move(PokemonUI.width() // 2 - self.title.width() // 2,
                         PokemonUI.height() // 4 - self.title.height())
-        self.everstoneFarming = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.itemFarming = QtWidgets.QPushButton(parent=self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Tw Cen MT")
-        font.setPointSize(10)
-        self.everstoneFarming.setText("EverstoneFarming")
-        self.everstoneFarming.setStyleSheet("color: black; background-color: grey;")
-        self.everstoneFarming.setFont(font)
-        self.everstoneFarming.setGeometry(QtCore.QRect(PokemonUI.width() // 2 - 140 // 2,
+        font.setPointSize(14)
+        self.itemFarming.setText("ItemFarming")
+        self.itemFarming.setStyleSheet("color: black; background-color: grey;")
+        self.itemFarming.setFont(font)
+        self.itemFarming.setGeometry(QtCore.QRect(PokemonUI.width() // 2 - 140 // 2,
                                                        PokemonUI.height() // 2 - 50 // 2, 140, 50))
         self.levelFarming = QtWidgets.QPushButton(parent=self.centralwidget)
         self.levelFarming.setText("LevelFarming")
@@ -100,9 +100,9 @@ class Ui_PokemonUI(object):
 
         QtCore.QMetaObject.connectSlotsByName(PokemonUI)
 
-        self.everstoneFarming.clicked.connect(self.load_everstone_farming_window)
-        self.everstoneFarming.clicked.connect(PokemonUI.close)
-        self.everstoneFarming.setAutoDefault(True)
+        self.itemFarming.clicked.connect(self.load_item_farming_window)
+        self.itemFarming.clicked.connect(PokemonUI.close)
+        self.itemFarming.setAutoDefault(True)
         self.plantOrWater.clicked.connect(self.load_plantorwater_window)
         self.plantOrWater.clicked.connect(PokemonUI.close)
         self.plantOrWater.setAutoDefault(True)
@@ -115,11 +115,11 @@ class Ui_PokemonUI(object):
 
         app.aboutToQuit.connect(closeEvent)
 
-    def load_everstone_farming_window(self):
+    def load_item_farming_window(self):
         global app, window
         self.window = QtWidgets.QMainWindow()
-        from EverstoneFarmingWindow import Ui_EverstoneFarming
-        self.ui = Ui_EverstoneFarming(app, window.pos())
+        from ItemFarmingWindow import Ui_ItemFarming
+        self.ui = Ui_ItemFarming(app, window.pos())
         self.ui.setupUi(self.window)
         self.window.show()
 
