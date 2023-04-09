@@ -6,6 +6,13 @@ It dynamically pulls them down from their own repos so if I change the scripts, 
 Windows Security will flag this as a trojan as it runs scripts that control your keyboard and mouse input to play the game for you
 
 
+# Game Configuration:
+* Make battle log as minimized as possible and lock the chat.
+* Set window size: 1280x720 in Settings.
+* Turn off, 'Show Overworld in Battle', 'Show Battle Background' and 'Show Border Tiles' in Settings/Video.
+* Extract the 'black_battle_options.zip' and add it as a custom Pokemmo theme (search up how to add custom themes to the game).
+
+
 # Farming Everstones (Sinnoh)
 
 ## Python Configuration:
@@ -32,11 +39,6 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Sweet scent in 4th key slot.
 * Teleport in 5th key slot.
 * Dig in the 6th key slot.
-
-## Game Configuration:
-* Make battle log as minimized as possible and lock the chat.
-* Set window size: 1280x720 in Settings.
-* Turn off, 'Show Overworld in Battle', 'Show Battle Background' and 'Show Border Tiles' in Settings/Video.
 
 # Plant or Water, Mistralton and Abundant Shrine (Unova)
 
@@ -80,8 +82,4 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Bike in 1st key slot.
 * Sweet scent in 4th key slot.
 * Teleport in 5th key slot.
-
-## Game Configuration:
-* Make battle log as minimized as possible and lock the chat.
-* Set window size: 1280x720
 
