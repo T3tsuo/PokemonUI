@@ -35,7 +35,8 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 
 ## Game Configuration:
 * Make battle log as minimized as possible and lock the chat.
-* Set window size: 1280x720 in Settings
+* Set window size: 1280x720 in Settings.
+* Turn off, 'Show Overworld in Battle', 'Show Battle Background' and 'Show Border Tiles' in Settings/Video.
 
 # Plant or Water, Mistralton and Abundant Shrine (Unova)
 
