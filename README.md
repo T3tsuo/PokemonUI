@@ -15,9 +15,6 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 
 # Farming Everstones (Sinnoh)
 
-## Python Configuration:
-* Tested with Python 3.11.2
-
 ## Where to start running the code:
 * Make sure your character is running and not walking.
 * Start at the nurse in the pokecenter at Canalave City.
@@ -29,7 +26,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 
 ## Pokemon Team Composition:
 * First pokemon has frisk ability.
-* Second pokemon (Quagsire) has thief in first slot and surf in second slot.
+* Second pokemon (Quagsire) has thief.
 * Pokemon with Sweet Scent must be in your party.
 * Pokemon with Teleport must be in your party.
 * Pokemon with Dig must be in your party.
@@ -41,9 +38,6 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Dig in the 6th key slot.
 
 # Plant or Water, Mistralton and Abundant Shrine (Unova)
-
-## Python Configuration:
-* Tested with Python 3.11.2
 
 ## Where to start running the code:
 * Mistralton:
@@ -74,7 +68,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * As soon as you hit start, make sure you click on the game.
 
 ## Pokemon Team Composition:
-* First pokemon has Surf/Earthquake in second slot and can 1 shot kill rhydon hordes.
+* First pokemon has Surf and is strong enough to kill lvl40s Rapidash.
 * Pokemon with Sweet Scent must be in your party.
 * Pokemon with Teleport must be in your party.
 
