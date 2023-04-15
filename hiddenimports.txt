@@ -3,5 +3,6 @@ pydirectinput
 requests
 opencv-python
 Pillow
+smtplib
 
-pyinstaller --noconfirm --onedir --windowed --icon "C:/Users/Tak Comeau/Desktop/PokemonUI/cache/poke.ico" --hidden-import "pyautogui" --hidden-import "pydirectinput" --hidden-import "requests" --hidden-import "opencv-python" --hidden-import "Pillow"  "C:/Users/Tak Comeau/Desktop/PokemonUI/PokemonUI.py"
+pyinstaller --noconfirm --onedir --windowed --icon "C:/Users/Tak Comeau/Desktop/PokemonUI/cache/poke.ico" --hidden-import "pyautogui" --hidden-import "pydirectinput" --hidden-import "requests" --hidden-import "opencv-python" --hidden-import "Pillow" --hidden-import "smtplib"  "C:/Users/Tak Comeau/Desktop/PokemonUI/PokemonUI.py"
