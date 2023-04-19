@@ -15,6 +15,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 
 # Jump to specific Script:
 * [Farming Everstones](#farming-everstones)
+* [Farming Amulet Coins](#farming-amulet-coins)
 
 
 # Farming Everstones 
@@ -42,7 +43,8 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Teleport in 5th key slot.
 * Dig in the 6th key slot.
 
-# Farming Amulet Coins (Kanto)
+# Farming Amulet Coins
+## Kanto
 
 ## Where to start running the code:
 * Make sure your character is running and not walking.
