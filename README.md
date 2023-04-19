@@ -16,7 +16,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 # Jump to specific Script:
 * [Farming Everstones](#farming-everstones)
 * [Farming Amulet Coins](#farming-amulet-coins)
-* [Plant Or Water](plant-or-water)
+* [Plant or Water](plant-or-water)
 
 
 # Farming Everstones 
@@ -67,7 +67,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Sweet scent in 4th key slot.
 * Teleport in 5th key slot.
 
-# Plant Or Water
+# Plant or Water
 ## Unova
 
 ## Where to start running the code:
