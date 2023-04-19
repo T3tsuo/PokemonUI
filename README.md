@@ -38,6 +38,28 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Teleport in 5th key slot.
 * Dig in the 6th key slot.
 
+# Farming Amulet Coins (Kanto)
+
+## Where to start running the code:
+* Make sure your character is running and not walking.
+* Start at the nurse in the pokecenter at Cerulean City.
+* Must have HM Cut
+* 2.30 is the amount of hours.minutes, so the program will run for 2 hours and 30 minutes.
+* sweet scent costs 5pp per use, so if you have 32pp then enter: 6
+    * if you have 20pp then enter: 4
+    * etc
+* As soon as you hit start, make sure you click on the game.
+
+## Pokemon Team Composition:
+* First pokemon (Banette) has frisk ability and thief.
+* Pokemon with Sweet Scent must be in your party.
+* Pokemon with Teleport must be in your party.
+
+## Key Slots:
+* Bike in 1st key slot.
+* Sweet scent in 4th key slot.
+* Teleport in 5th key slot.
+
 # Plant or Water, Mistralton and Abundant Shrine (Unova)
 
 ## Where to start running the code:
