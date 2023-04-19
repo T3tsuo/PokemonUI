@@ -18,6 +18,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * [Farming Amulet Coins](#farming-amulet-coins)
 * [Plant or Water](#plant-or-water)
 * [Level Farming](#level-farming)
+* [Ditto Farm](#ditto-farm)
 
 
 # Farming Everstones 
@@ -109,4 +110,26 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Bike in 1st key slot.
 * Sweet scent in 4th key slot.
 * Teleport in 5th key slot.
+
+# Ditto Farm
+## Hoenn
+
+## Where to start running the code:
+* Make sure your character is running and not walking.
+* Start at the nurse in the pokecenter at Fallarbor Town.
+* Enter the total amount of duskballs the user currently has
+* As soon as you hit start, make sure you click on the game.
+
+## Pokemon Team Composition:
+* First pokemon is Smeargle.
+   * Has Payday, False Swipe, Assist and SweetScent 
+   * Ability is Technician
+   * Holding LeftOvers
+* Second pokemon is Parasect.
+    * Has Counter, Dig, Spore, Endure
+
+## Key Slots:
+* Bike in 1st key slot.
+* Teleport in 5th key slot.
+* Dig in the 6th key slot.
 
