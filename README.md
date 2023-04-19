@@ -16,7 +16,8 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 # Jump to specific Script:
 * [Farming Everstones](#farming-everstones)
 * [Farming Amulet Coins](#farming-amulet-coins)
-* [Plant or Water](plant-or-water)
+* [Plant or Water](#plant-or-water)
+* [Level Farming](#level-farming)
 
 
 # Farming Everstones 
@@ -85,7 +86,8 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * As soon as you press start, make sure you click on the game.
     * If you choose plant, the first plant it will make you choose the seeds manually, you have 10 seconds before the script goes to the next plant and it will do those and the rest automatically.
     
-# LevelFarming Lacunosa Town (Unova)
+# Level Farming
+## Unova
 
 ## Python Configuration:
 * Tested with Python 3.11.2
