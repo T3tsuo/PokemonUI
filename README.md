@@ -17,7 +17,8 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * [Farming Everstones](#farming-everstones)
 
 
-# Farming Everstones (Sinnoh)
+# Farming Everstones 
+## Sinnoh
 
 ## Where to start running the code:
 * Make sure your character is running and not walking.
