@@ -13,6 +13,9 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Controls are default
 * Extract the 'black_battle_options.zip' and add it as a custom Pokemmo theme (search up how to add custom themes to the game).
 
+# Jump to specific Script:
+* [Farming Everstones][#farming-everstiones-(sinnoh)]
+
 
 # Farming Everstones (Sinnoh)
 
