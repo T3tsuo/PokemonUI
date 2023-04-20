@@ -130,6 +130,6 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 
 ## Key Slots:
 * Bike in 1st key slot.
-* Teleport in 5th key slot.
-* Dig in the 6th key slot.
+* Teleport Ocarina in 5th key slot.
+* Dig Ocarina in the 6th key slot.
 
