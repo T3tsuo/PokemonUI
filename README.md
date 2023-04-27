@@ -13,6 +13,12 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Controls are default
 * Extract the 'black_battle_options.zip' and add it as a custom Pokemmo theme (search up how to add custom themes to the game).
 
+beta:
+infront of vermilion city pokemon center is (left increases x, down increases y):
+ * x = 15
+ * y = 7
+
+
 # Jump to specific Script:
 * [Farming Everstones](#farming-everstones)
 * [Farming Amulet Coins](#farming-amulet-coins)
