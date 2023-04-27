@@ -14,7 +14,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Extract the 'black_battle_options.zip' and add it as a custom Pokemmo theme (search up how to add custom themes to the game).
 
 beta:
-infront of vermilion city pokemon center is (left increases x, down increases y):
+infront of vermilion city pokemon center is (right increases x, down increases y):
  * x = 15
  * y = 7
 
