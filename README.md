@@ -13,11 +13,9 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Controls are default
 * Extract the 'black_battle_options.zip' and add it as a custom Pokemmo theme (search up how to add custom themes to the game).
 
-beta:
-infront of vermilion city pokemon center is (right increases x, down increases y):
- * x = 15
- * y = 7
-
+# Helpful Configuration:
+* [Gmail Notification](#gmail-notification)
+* [Path Correction](#path-correction)
 
 # Jump to specific Script:
 * [Farming Everstones](#farming-everstones)
@@ -26,6 +24,29 @@ infront of vermilion city pokemon center is (right increases x, down increases y
 * [Level Farming](#level-farming)
 * [Ditto Farm](#ditto-farm)
 
+
+# Gmail Notification:
+Emails you when game encounters a shiny (the script will end itself when it encounters one automatically) 
+or when the script has finished running.
+
+## Setup:
+* Generate google app password for account
+* Run add_gmail.exe and input email address and correlated app password (only needs to be ran once)
+
+## Delete:
+* To delete, just look for the corresponding .dat file
+
+
+# Path Correction:
+Sometimes the script will overshoot/undershoot the path the player takes. Setting this up will help the script 
+correct any path it misses.
+
+## Setup:
+* Find the game folder (could be in Program Files, Program Files x86, etc).
+* Run the add_game_path.exe file and paste the directory path (only needs to be ran once)
+
+## Delete:
+* To delete, just look for the corresponding .dat file
 
 # Farming Everstones 
 ## Sinnoh
