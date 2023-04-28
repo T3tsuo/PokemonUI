@@ -39,7 +39,7 @@ or when the script has finished running.
 
 # Path Correction:
 Sometimes the script will overshoot/undershoot the path the player takes. Setting this up will help the script 
-correct any path it misses.
+correct any path it misses (currently working for Ditto Farming).
 
 ## Setup:
 * Find the game folder (could be in Program Files, Program Files x86, etc).
