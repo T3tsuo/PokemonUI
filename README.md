@@ -20,7 +20,7 @@ correct any path it misses (currently working for Ditto Farm and Amulet Farming)
 
 ## Setup:
 * Find the game folder (could be in Program Files, Program Files x86, etc).
-* Run the add_game_path.exe file and paste the directory path (only needs to be ran once)
+* Run the add_game_path.exe file and paste the directory path (only needs to be ran once).
 
 ## Delete:
 * To delete, just look for the corresponding .dat file
