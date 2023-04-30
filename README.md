@@ -13,19 +13,21 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Controls are default
 * Extract the 'black_battle_options.zip' and add it as a custom Pokemmo theme (search up how to add custom themes to the game).
 
-# Helpful Configuration:
-* [Gmail Notification](#gmail-notification)
-* [Path Correction](#path-correction)
+# Path Correction/Item Farming:
+Sometimes the script will overshoot/undershoot the path the player takes. Setting this up will help the script 
+correct any path it misses (currently working for Ditto Farm and Amulet Farming).
+For Item finding, it will make sure to read the latest battle log only and not read older battle logs by knowing where your game is on your screen.
 
-# Jump to specific Script:
-* [Farming Everstones](#farming-everstones)
-* [Farming Amulet Coins](#farming-amulet-coins)
-* [Plant or Water](#plant-or-water)
-* [Level Farming](#level-farming)
-* [Ditto Farm](#ditto-farm)
+## Setup:
+* Find the game folder (could be in Program Files, Program Files x86, etc).
+* Run the add_game_path.exe file and paste the directory path (only needs to be ran once)
+
+## Delete:
+* To delete, just look for the corresponding .dat file
 
 
 # Gmail Notification:
+## This is optional
 Emails you when game encounters a shiny (the script will end itself when it encounters one automatically) 
 or when the script has finished running.
 
@@ -36,17 +38,12 @@ or when the script has finished running.
 ## Delete:
 * To delete, just look for the corresponding .dat file
 
-
-# Path Correction:
-Sometimes the script will overshoot/undershoot the path the player takes. Setting this up will help the script 
-correct any path it misses (currently working for Ditto Farm and Amulet Farming).
-
-## Setup:
-* Find the game folder (could be in Program Files, Program Files x86, etc).
-* Run the add_game_path.exe file and paste the directory path (only needs to be ran once)
-
-## Delete:
-* To delete, just look for the corresponding .dat file
+# Jump to specific Script:
+* [Farming Everstones](#farming-everstones)
+* [Farming Amulet Coins](#farming-amulet-coins)
+* [Plant or Water](#plant-or-water)
+* [Level Farming](#level-farming)
+* [Ditto Farm](#ditto-farm)
 
 # Farming Everstones 
 ## Sinnoh
