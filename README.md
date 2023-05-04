@@ -15,7 +15,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 
 # Path Correction/Item Farming Setup:
 * Sometimes the script will overshoot/undershoot the path the player takes. Setting this up will help the script 
-correct any path it misses (currently working for Ditto Farm and Amulet Farming).
+correct any path it misses (currently working for Ditto Farm, Amulet Farming and Everstone Farming).
 * For Item finding, it will make sure to read the latest battle log only and not read older battle logs by knowing where your game is on your screen.
 
 ## Setup:
