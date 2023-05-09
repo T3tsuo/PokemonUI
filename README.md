@@ -146,7 +146,7 @@ or when the script has finished running.
 
 ## Pokemon Team Composition:
 * First pokemon is Smeargle.
-   * Has Payday, False Swipe, Assist and SweetScent 
+   * Has Payday, False Swipe, Assist and SweetScent (max pp all of them)
    * Ability is Technician
    * Holding LeftOvers
 * Second pokemon is Parasect.
