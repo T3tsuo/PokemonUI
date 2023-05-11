@@ -50,7 +50,7 @@ or when the script has finished running.
 
 ## Where to start running the code:
 * Make sure your character is running and not walking.
-* Start at the nurse in the pokecenter at Canalave City.
+* Start at the nurse in the pokecenter at Oreburgh City.
 * 2.30 is the amount of hours.minutes, so the program will run for 2 hours and 30 minutes.
 * sweet scent costs 5pp per use, so if you have 32pp then enter: 6
     * if you have 20pp then enter: 4
@@ -58,8 +58,7 @@ or when the script has finished running.
 * As soon as you hit start, make sure you click on the game.
 
 ## Pokemon Team Composition:
-* First pokemon has frisk ability.
-* Second pokemon (Quagsire) has thief.
+* First pokemon (Banette) has frisk ability and thief.
 * Pokemon with Sweet Scent must be in your party.
 * Pokemon with Teleport must be in your party.
 * Pokemon with Dig must be in your party.
