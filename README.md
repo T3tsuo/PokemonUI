@@ -143,7 +143,7 @@ or when the script has finished running.
 * First pokemon is Smeargle.
    * Has Payday, False Swipe, Assist and SweetScent (max pp all of them)
    * Ability is Technician
-   * hp ev 6, atk ev 252, defense ev 252
+   * hp ev 6, atk ev 252, def ev 252
    * Holding LeftOvers
 * Second pokemon is Parasect.
     * Has Counter, Dig, Spore, Endure
