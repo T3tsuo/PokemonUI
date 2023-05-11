@@ -113,10 +113,6 @@ or when the script has finished running.
 # Level Farming
 ## Unova
 
-## Python Configuration:
-* Tested with Python 3.11.2
-* run: pip install -r requirements.txt
-
 ## Where to start running the code:
 * Make sure your character is running and not walking.
 * Start at the nurse in the pokecenter at Lacunosa Town.
