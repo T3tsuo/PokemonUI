@@ -121,7 +121,7 @@ or when the script has finished running.
 * As soon as you hit start, make sure you click on the game.
 
 ## Pokemon Team Composition:
-* First pokemon has Surf and is strong enough to kill lvl40s Rapidash.
+* First pokemon has Surf/Earthquake and is strong enough to kill lvl40s Rapidash.
 * Pokemon with Sweet Scent must be in your party.
 * Pokemon with Teleport must be in your party.
 
