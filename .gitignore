@@ -1,8 +1,10 @@
 game_path.dat
 email.dat
 mail_password.dat
+log.txt
 .idea
 window_position.dat
+window_size.dat
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
