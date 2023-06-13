@@ -357,5 +357,6 @@ def open_item_ui():
 
 def run_script(n, pokemon):
     if pokemon == "Ditto":
-        sys.path.insert(0, "scripts/DittoFarm")
+        sys.path.insert(0, "scripts/PokemonFarming/DittoFarm")
+        import DittoFarm
         DittoFarm.run(n)

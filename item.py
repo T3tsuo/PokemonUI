@@ -397,9 +397,9 @@ def open_pokemon_ui():
 
 def run_script(n, t, item):
     if item == "Everstone":
-        sys.path.insert(0, "scripts/EverstoneFarming")
+        sys.path.insert(0, "scripts/ItemFarming/EverstoneFarming")
         EverstoneFarming.run(n, t)
     elif item == "Amulet Coin":
-        sys.path.insert(0, "scripts/AmuletFarming")
+        sys.path.insert(0, "scripts/ItemFarming/AmuletFarming")
         import AmuletFarming
         AmuletFarming.run(n, t)
