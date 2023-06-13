@@ -1,6 +1,5 @@
 # PokemonUI
 GUI that runs pokemon scripts that I made.
-It dynamically pulls them down from their own repos so if I change the scripts, I don't have to recompile the EXE file to update the changes.
 
 # WARNING
 Windows Security will flag this as a trojan as it runs scripts that control your keyboard and mouse input to play the game for you
