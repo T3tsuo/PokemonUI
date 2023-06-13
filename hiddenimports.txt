@@ -4,4 +4,4 @@ requests
 opencv-python
 Pillow
 
-pyinstaller --noconfirm --onedir --windowed --icon "C:/Users/Tak Comeau/Desktop/PokemonUI/cache/poke.ico" --hidden-import "pyautogui" --hidden-import "pydirectinput" --hidden-import "requests" --hidden-import "opencv-python" --hidden-import "Pillow" "C:/Users/Tak Comeau/Desktop/PokemonUI/controller.py"
+pyinstaller --noconfirm --onedir --windowed --icon "C:/Users/Tak Comeau/Desktop/PokemonUI/feather/poke.ico" --hidden-import "pyautogui" --hidden-import "pydirectinput" --hidden-import "requests" --hidden-import "opencv-python" --hidden-import "Pillow" "C:/Users/Tak Comeau/Desktop/PokemonUI/controller.py"
