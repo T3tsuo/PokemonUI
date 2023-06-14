@@ -1,7 +1,7 @@
 # PokemonUI
 GUI that runs pokemon scripts that I made.
 
-<img src="https://github.com/T3tsuo/PokemonUI/blob/main/example_censored.png" width="1000" height="397">
+<img src="https://github.com/T3tsuo/PokemonUI/blob/main/example_censored.png" width="1000" height="350">
 
 # WARNING
 Windows Security will flag this as a trojan as it runs scripts that control your keyboard and mouse input to play the game for you
