@@ -9,6 +9,7 @@ import time, os
 import multiprocessing
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import QRunnable, pyqtSlot, QThreadPool
+from git import Repo
 
 from thread_workers import WorkerSignal
 
@@ -397,10 +398,20 @@ def open_pokemon_ui():
 
 def run_script(n, t, item):
     if item == "Everstone":
+        # try to update script
+        repo = Repo('scripts/ItemFarming/EverstoneFarming')
+        o = repo.remotes.origin
+        o.pull()
+        # go to script folder to import main file and all dependencies
         sys.path.insert(0, "scripts/ItemFarming/EverstoneFarming")
         import EverstoneFarming
         EverstoneFarming.run(n, t)
     elif item == "Amulet Coin":
+        # try to update script
+        repo = Repo('scripts/ItemFarming/AmuletFarming')
+        o = repo.remotes.origin
+        o.pull()
+        # go to script folder to import main file and all dependencies
         sys.path.insert(0, "scripts/ItemFarming/AmuletFarming")
         import AmuletFarming
         AmuletFarming.run(n, t)

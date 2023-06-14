@@ -9,6 +9,7 @@ import sys
 from PyQt6 import QtCore, QtGui, QtWidgets
 import multiprocessing, time, os
 from PyQt6.QtCore import QRunnable, pyqtSlot, QThreadPool
+from git import Repo
 
 from thread_workers import WorkerSignal
 
@@ -357,6 +358,11 @@ def open_item_ui():
 
 def run_script(n, pokemon):
     if pokemon == "Ditto":
+        # try to update script
+        repo = Repo('scripts/PokemonFarming/DittoFarm')
+        o = repo.remotes.origin
+        o.pull()
+        # go to script folder to import main file and all dependencies
         sys.path.insert(0, "scripts/PokemonFarming/DittoFarm")
         import DittoFarm
         DittoFarm.run(n)
