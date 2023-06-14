@@ -37,7 +37,7 @@ or when the script has finished running.
 * Run add_gmail.exe and input email address and correlated app password (only needs to be ran once)
 
 ## Delete:
-* To delete, just look for the corresponding .dat file
+* To delete, just look for the corresponding .dat files
 
 # Jump to specific Script:
 * [Farming Everstones](#farming-everstones)
