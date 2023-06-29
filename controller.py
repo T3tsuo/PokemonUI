@@ -39,8 +39,9 @@ if __name__ == "__main__":
     HomeWindow = QtWidgets.QMainWindow()
     from home import Ui_HomeUI
     from item import Ui_ItemUI
+    from level import Ui_LevelUI
     from pokemon import Ui_PokemonUI
-    uis = [Ui_HomeUI(), Ui_ItemUI(), Ui_PokemonUI()]
+    uis = [Ui_HomeUI(), Ui_ItemUI(), Ui_LevelUI(), Ui_PokemonUI()]
     uis[0].setupUi(HomeWindow, uis)
     if window_position is not None:
         HomeWindow.move(window_position)

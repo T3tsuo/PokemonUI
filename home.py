@@ -20,11 +20,18 @@ def open_item_ui():
     uis[1].setupUi(window, uis)
 
 
-def open_pokemon_ui():
+def open_level_ui():
     global window, uis
     for p in multiprocessing.active_children():
         p.terminate()
     uis[2].setupUi(window, uis)
+
+
+def open_pokemon_ui():
+    global window, uis
+    for p in multiprocessing.active_children():
+        p.terminate()
+    uis[3].setupUi(window, uis)
 
 
 class Ui_HomeUI(object):
@@ -216,4 +223,5 @@ class Ui_HomeUI(object):
         QtCore.QMetaObject.connectSlotsByName(HomeUI)
 
         self.itemBtn.clicked.connect(open_item_ui)
+        self.levelBtn.clicked.connect(open_level_ui)
         self.pokemonBtn.clicked.connect(open_pokemon_ui)

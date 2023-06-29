@@ -268,11 +268,14 @@ class Ui_PokemonUI(object):
 
         self.threadpool = QThreadPool()
 
+        self.homeBtn.clicked.connect(self.hide_status)
+        self.homeBtn.clicked.connect(open_home_ui)
+
         self.itemBtn.clicked.connect(self.hide_status)
         self.itemBtn.clicked.connect(open_item_ui)
 
-        self.homeBtn.clicked.connect(self.hide_status)
-        self.homeBtn.clicked.connect(open_home_ui)
+        self.levelBtn.clicked.connect(self.hide_status)
+        self.levelBtn.clicked.connect(open_level_ui)
 
         self.runBtn.clicked.connect(self.run_pokemon_farming)
         self.runBtn.setAutoDefault(True)
@@ -354,6 +357,13 @@ def open_item_ui():
     for p in multiprocessing.active_children():
         p.terminate()
     uis[1].setupUi(window, uis)
+
+
+def open_level_ui():
+    global window, uis
+    for p in multiprocessing.active_children():
+        p.terminate()
+    uis[2].setupUi(window, uis)
 
 
 def run_script(n, pokemon):
