@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>718</width>
-    <height>723</height>
+    <height>729</height>
    </rect>
   </property>
   <property name="font">
@@ -434,7 +434,7 @@
                <x>0</x>
                <y>0</y>
                <width>600</width>
-               <height>236</height>
+               <height>239</height>
               </rect>
              </property>
              <property name="styleSheet">

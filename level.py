@@ -18,7 +18,7 @@ from thread_workers import WorkerSignal
 level_process = None
 window = None
 is_run = False
-uis = []
+uis = {}
 
 log_data = ""
 
@@ -37,9 +37,9 @@ class CheckProcess(QRunnable):
 
 
 class Ui_LevelUI(object):
-    def setupUi(self, LevelUI, list):
+    def setupUi(self, LevelUI, dict):
         global window, uis
-        uis = list
+        uis = dict
         window = LevelUI
         font = QtGui.QFont()
         font.setPointSize(16)
@@ -260,6 +260,9 @@ class Ui_LevelUI(object):
         self.itemBtn.clicked.connect(self.hide_status)
         self.itemBtn.clicked.connect(open_item_ui)
 
+        self.plantingBtn.clicked.connect(self.hide_status)
+        self.plantingBtn.clicked.connect(open_plant_ui)
+
         self.pokemonBtn.clicked.connect(self.hide_status)
         self.pokemonBtn.clicked.connect(open_pokemon_ui)
 
@@ -333,21 +336,28 @@ def open_home_ui():
     global window, uis
     for p in multiprocessing.active_children():
         p.terminate()
-    uis[0].setupUi(window, uis)
+    uis["home"].setupUi(window, uis)
 
 
 def open_item_ui():
     global window, uis
     for p in multiprocessing.active_children():
         p.terminate()
-    uis[1].setupUi(window, uis)
+    uis["item"].setupUi(window, uis)
+
+
+def open_plant_ui():
+    global window, uis
+    for p in multiprocessing.active_children():
+        p.terminate()
+    uis["plant"].setupUi(window, uis)
 
 
 def open_pokemon_ui():
     global window, uis
     for p in multiprocessing.active_children():
         p.terminate()
-    uis[3].setupUi(window, uis)
+    uis["pokemon"].setupUi(window, uis)
 
 
 def run_script(n):

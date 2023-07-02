@@ -10,34 +10,41 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 import multiprocessing
 
 window = None
-uis = []
+uis = {}
 
 
 def open_item_ui():
     global window, uis
     for p in multiprocessing.active_children():
         p.terminate()
-    uis[1].setupUi(window, uis)
+    uis["item"].setupUi(window, uis)
 
 
 def open_level_ui():
     global window, uis
     for p in multiprocessing.active_children():
         p.terminate()
-    uis[2].setupUi(window, uis)
+    uis["level"].setupUi(window, uis)
+
+
+def open_plant_ui():
+    global window, uis
+    for p in multiprocessing.active_children():
+        p.terminate()
+    uis["plant"].setupUi(window, uis)
 
 
 def open_pokemon_ui():
     global window, uis
     for p in multiprocessing.active_children():
         p.terminate()
-    uis[3].setupUi(window, uis)
+    uis["pokemon"].setupUi(window, uis)
 
 
 class Ui_HomeUI(object):
-    def setupUi(self, HomeUI, list):
+    def setupUi(self, HomeUI, dict):
         global window, uis
-        uis = list
+        uis = dict
         window = HomeUI
         HomeUI.setObjectName("MainWindow")
         HomeUI.setWindowTitle("PokemonUI")
@@ -224,4 +231,5 @@ class Ui_HomeUI(object):
 
         self.itemBtn.clicked.connect(open_item_ui)
         self.levelBtn.clicked.connect(open_level_ui)
+        self.plantingBtn.clicked.connect(open_plant_ui)
         self.pokemonBtn.clicked.connect(open_pokemon_ui)

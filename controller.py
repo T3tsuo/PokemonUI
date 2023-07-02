@@ -40,15 +40,17 @@ if __name__ == "__main__":
     from home import Ui_HomeUI
     from item import Ui_ItemUI
     from level import Ui_LevelUI
+    from plant import Ui_PlantUI
     from pokemon import Ui_PokemonUI
-    uis = [Ui_HomeUI(), Ui_ItemUI(), Ui_LevelUI(), Ui_PokemonUI()]
-    uis[0].setupUi(HomeWindow, uis)
+    uis = {"home": Ui_HomeUI(), "item": Ui_ItemUI(), "level": Ui_LevelUI(),
+           "plant": Ui_PlantUI(), "pokemon": Ui_PokemonUI()}
+    uis["home"].setupUi(HomeWindow, uis)
     if window_position is not None:
         HomeWindow.move(window_position)
     if window_size is not None:
         HomeWindow.resize(window_size)
     else:
-        HomeWindow.resize(979, 597)
+        HomeWindow.resize(486, 578)
     HomeWindow.show()
     app.aboutToQuit.connect(closeEvent)
     sys.exit(app.exec())
