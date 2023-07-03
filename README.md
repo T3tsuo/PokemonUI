@@ -8,7 +8,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 
 
 # Game Configuration:
-* Make battle log as minimized as possible and lock the chat.
+* Make battle log as minimized as possible, make the chat transparency 100 and lock the chat.
 * Set window size: 1280x720 in Settings.
 * Turn off, 'Show Overworld in Battle' and 'Show Battle Background' in Settings/Video.
 * Controls are default
