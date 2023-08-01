@@ -20,11 +20,10 @@ correct any path it misses (currently working for Ditto Farm, Amulet Farming and
 * For Item finding, it will make sure to read the latest battle log only and not read older battle logs by knowing where your game is on your screen.
 
 ## Setup:
-* Find the game folder (could be in Program Files, Program Files x86, etc).
-* Run the add_game_path.exe file and paste the directory path (only needs to be ran once).
+* Press the gear icon in the app, press Add under Game Path and paste the directory path (only needs to be ran once).
 
 ## Delete:
-* To delete, just look for the corresponding .dat file
+* To delete, just look for the corresponding 'game_path.dat' file
 
 
 # Gmail Notification:
@@ -34,10 +33,10 @@ or when the script has finished running.
 
 ## Setup:
 * Generate google app password for account
-* Run add_gmail.exe and input email address and correlated app password (only needs to be ran once)
+* Press the gear icon in the app, press Add under Gmail Notify and input email address and correlated app password (only needs to be ran once)
 
 ## Delete:
-* To delete, just look for the corresponding .dat files
+* To delete, just look for the corresponding 'email.dat' and 'mail_password.dat' files
 
 # Jump to specific Script:
 * [Farming Everstones](#farming-everstones)
