@@ -197,6 +197,9 @@
            <verstretch>3</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QWidget" name="gmailcontainer" native="true">
@@ -262,6 +265,9 @@
           </item>
           <item>
            <widget class="QWidget" name="gamepathcontainer" native="true">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <layout class="QVBoxLayout" name="verticalLayout_9">
              <item alignment="Qt::AlignHCenter">
               <widget class="QWidget" name="gamepathtitlecontainer" native="true">

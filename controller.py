@@ -12,21 +12,21 @@ import pickle
 
 app = None
 
-if os.path.isfile("window_position.dat"):
-    window_position = pickle.load(open("window_position.dat", "rb"))
+if os.path.isfile("window-config/window_position.dat"):
+    window_position = pickle.load(open("window-config/window_position.dat", "rb"))
 else:
     window_position = None
 
-if os.path.isfile("window_size.dat"):
-    window_size = pickle.load(open("window_size.dat", "rb"))
+if os.path.isfile("window-config/window_size.dat"):
+    window_size = pickle.load(open("window-config/window_size.dat", "rb"))
 else:
     window_size = None
 
 
 def closeEvent():
     global HomeWindow
-    pickle.dump(HomeWindow.pos(), open("window_position.dat", "wb"))
-    pickle.dump(HomeWindow.size(), open("window_size.dat", "wb"))
+    pickle.dump(HomeWindow.pos(), open("window-config/window_position.dat", "wb"))
+    pickle.dump(HomeWindow.size(), open("window-config/window_size.dat", "wb"))
     for p in multiprocessing.active_children():
         p.terminate()
 
@@ -43,8 +43,10 @@ if __name__ == "__main__":
     from level import Ui_LevelUI
     from plant import Ui_PlantUI
     from pokemon import Ui_PokemonUI
+    from gmail import Ui_GmailUI
+    from gamepath import Ui_GamePathUI
     uis = {"home": Ui_HomeUI(), "settings": Ui_SettingsUI(), "item": Ui_ItemUI(), "level": Ui_LevelUI(),
-           "plant": Ui_PlantUI(), "pokemon": Ui_PokemonUI()}
+           "plant": Ui_PlantUI(), "pokemon": Ui_PokemonUI(), "gmail": Ui_GmailUI(), "gamepath": Ui_GamePathUI()}
     uis["home"].setupUi(HomeWindow, uis)
     if window_position is not None:
         HomeWindow.move(window_position)
