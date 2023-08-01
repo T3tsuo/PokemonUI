@@ -310,6 +310,9 @@ class Ui_ItemUI(object):
         self.homeBtn.clicked.connect(self.hide_status)
         self.homeBtn.clicked.connect(open_home_ui)
 
+        self.settingsBtn.clicked.connect(self.hide_status)
+        self.settingsBtn.clicked.connect(open_settings_ui)
+
         self.levelBtn.clicked.connect(self.hide_status)
         self.levelBtn.clicked.connect(open_level_ui)
 
@@ -392,6 +395,13 @@ def open_home_ui():
     for p in multiprocessing.active_children():
         p.terminate()
     uis["home"].setupUi(window, uis)
+
+
+def open_settings_ui():
+    global window, uis
+    for p in multiprocessing.active_children():
+        p.terminate()
+    uis["settings"].setupUi(window, uis)
 
 
 def open_level_ui():

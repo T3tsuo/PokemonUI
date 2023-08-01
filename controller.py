@@ -38,11 +38,12 @@ if __name__ == "__main__":
     app.setWindowIcon(QtGui.QIcon("feather/poke.ico"))
     HomeWindow = QtWidgets.QMainWindow()
     from home import Ui_HomeUI
+    from settings import Ui_SettingsUI
     from item import Ui_ItemUI
     from level import Ui_LevelUI
     from plant import Ui_PlantUI
     from pokemon import Ui_PokemonUI
-    uis = {"home": Ui_HomeUI(), "item": Ui_ItemUI(), "level": Ui_LevelUI(),
+    uis = {"home": Ui_HomeUI(), "settings": Ui_SettingsUI(), "item": Ui_ItemUI(), "level": Ui_LevelUI(),
            "plant": Ui_PlantUI(), "pokemon": Ui_PokemonUI()}
     uis["home"].setupUi(HomeWindow, uis)
     if window_position is not None:

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>979</width>
+    <width>562</width>
     <height>597</height>
    </rect>
   </property>
@@ -132,7 +132,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="itemtn">
+           <widget class="QPushButton" name="itemBtn">
             <property name="text">
              <string>Item</string>
             </property>
@@ -201,7 +201,7 @@
           <item>
            <widget class="QWidget" name="gmailcontainer" native="true">
             <layout class="QVBoxLayout" name="verticalLayout_6">
-             <item alignment="Qt::AlignHCenter">
+             <item>
               <widget class="QWidget" name="titlecontainer" native="true">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -210,7 +210,7 @@
                 </sizepolicy>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_7">
-                <item>
+                <item alignment="Qt::AlignHCenter">
                  <widget class="QLabel" name="titlegmail">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -220,65 +220,11 @@
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>14</pointsize>
+                    <pointsize>16</pointsize>
                    </font>
                   </property>
                   <property name="text">
-                   <string>Add Gmail Notification</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-              <widget class="QWidget" name="inputcontainer" native="true">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>1</verstretch>
-                </sizepolicy>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
-                <item>
-                 <widget class="QTextEdit" name="gmailinput">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <pointsize>14</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: transparent;</string>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Enter gmail address:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QTextEdit" name="passwordinput">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>1</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <pointsize>14</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: transparent;</string>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Enter app password:</string>
+                   <string>Gmail Notify</string>
                   </property>
                  </widget>
                 </item>
@@ -286,19 +232,6 @@
               </widget>
              </item>
              <item>
-              <spacer name="verticalSpacer">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item alignment="Qt::AlignHCenter">
               <widget class="QWidget" name="submitcontainergmail" native="true">
                <property name="font">
                 <font>
@@ -306,15 +239,18 @@
                 </font>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_8">
-                <item>
-                 <widget class="QPushButton" name="submitgmail">
+                <item alignment="Qt::AlignHCenter">
+                 <widget class="QPushButton" name="gmailBtn">
                   <property name="font">
                    <font>
                     <pointsize>14</pointsize>
                    </font>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">padding: 10px 25px 10px 25px; border: 1px solid white;</string>
+                  </property>
                   <property name="text">
-                   <string>Submit</string>
+                   <string>Add</string>
                   </property>
                  </widget>
                 </item>
@@ -350,65 +286,31 @@
                    </font>
                   </property>
                   <property name="text">
-                   <string>Add Game Path</string>
+                   <string>Game Path</string>
                   </property>
                  </widget>
                 </item>
                </layout>
               </widget>
-             </item>
-             <item>
-              <widget class="QWidget" name="gamepathinputcontainer" native="true">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>1</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>14</pointsize>
-                </font>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_11">
-                <item>
-                 <widget class="QTextEdit" name="textEdit">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: transparent;</string>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Enter game path:</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <spacer name="verticalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
              </item>
              <item alignment="Qt::AlignHCenter">
-              <widget class="QWidget" name="widget_4" native="true">
+              <widget class="QWidget" name="gamepathBtnContainer" native="true">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
                <layout class="QVBoxLayout" name="verticalLayout_12">
                 <item>
-                 <widget class="QPushButton" name="pushButton">
+                 <widget class="QPushButton" name="gamepathBtn">
                   <property name="font">
                    <font>
                     <pointsize>14</pointsize>
                    </font>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">padding: 10px 25px 10px 25px; border: 1px solid white;</string>
+                  </property>
                   <property name="text">
-                   <string>Submit</string>
+                   <string>Add</string>
                   </property>
                  </widget>
                 </item>
@@ -430,11 +332,11 @@
           </sizepolicy>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
-          <item alignment="Qt::AlignTop">
+          <item>
            <widget class="QLabel" name="logtitle">
             <property name="font">
              <font>
-              <pointsize>10</pointsize>
+              <pointsize>12</pointsize>
              </font>
             </property>
             <property name="text">
@@ -464,13 +366,37 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>861</width>
-               <height>189</height>
+               <width>451</width>
+               <height>196</height>
               </rect>
              </property>
              <property name="styleSheet">
               <string notr="true"/>
              </property>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="logLabel">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </widget>
           </item>
