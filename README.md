@@ -23,7 +23,7 @@ correct any path it misses (currently working for Ditto Farm, Amulet Farming and
 * Press the gear icon in the app, press Add under Game Path and paste the directory path (only needs to be ran once).
 
 ## Delete:
-* To delete, just look for the corresponding 'game_path.dat' file in the games' directory.
+* To delete, just press the gear icon in the app, and press Remove under Game Path.
 
 
 # Gmail Notification:
@@ -36,7 +36,7 @@ or when the script has finished running.
 * Press the gear icon in the app, press Add under Gmail Notify and input email address and correlated app password (only needs to be ran once)
 
 ## Delete:
-* To delete, just look for the corresponding 'email.dat' and 'mail_password.dat' files in the games' directory.
+* To delete, just press the gear icon in the app, and press Remove under Gmail Notify.
 
 # Jump to specific Script:
 * [Farming Everstones](#farming-everstones)
