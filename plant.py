@@ -389,11 +389,7 @@ def open_level_ui():
 
 
 def run_script(place, action):
-    # try to update script
-    repo = Repo('scripts/PlantorWater')
-    o = repo.remotes.origin
-    o.pull()
     # go to script folder to import main file and all dependencies
-    sys.path.insert(0, "scripts/PlantorWater")
+    sys.path.insert(0, "scripts/PokemonScripts/PlantorWater")
     import PlantorWater
     PlantorWater.run(place, action)

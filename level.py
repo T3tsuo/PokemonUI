@@ -371,11 +371,7 @@ def open_pokemon_ui():
 
 
 def run_script(n):
-    # try to update script
-    repo = Repo('scripts/LevelFarming')
-    o = repo.remotes.origin
-    o.pull()
     # go to script folder to import main file and all dependencies
-    sys.path.insert(0, "scripts/LevelFarming")
+    sys.path.insert(0, "scripts/PokemonScripts/LevelFarming")
     import LevelFarming
     LevelFarming.run(n)

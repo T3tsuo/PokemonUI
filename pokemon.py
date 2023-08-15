@@ -388,11 +388,7 @@ def open_plant_ui():
 
 def run_script(n, pokemon):
     if pokemon == "Ditto":
-        # try to update script
-        repo = Repo('scripts/PokemonFarming/DittoFarm')
-        o = repo.remotes.origin
-        o.pull()
         # go to script folder to import main file and all dependencies
-        sys.path.insert(0, "scripts/PokemonFarming/DittoFarm")
+        sys.path.insert(0, "scripts/PokemonScripts/PokemonFarming/DittoFarm")
         import DittoFarm
         DittoFarm.run(n)

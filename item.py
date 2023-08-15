@@ -427,20 +427,12 @@ def open_pokemon_ui():
 
 def run_script(n, t, item):
     if item == "Everstone":
-        # try to update script
-        repo = Repo('scripts/ItemFarming/EverstoneFarming')
-        o = repo.remotes.origin
-        o.pull()
         # go to script folder to import main file and all dependencies
-        sys.path.insert(0, "scripts/ItemFarming/EverstoneFarming")
+        sys.path.insert(0, "scripts/PokemonScripts/ItemFarming/EverstoneFarming")
         import EverstoneFarming
         EverstoneFarming.run(n, t)
     elif item == "Amulet Coin":
-        # try to update script
-        repo = Repo('scripts/ItemFarming/AmuletFarming')
-        o = repo.remotes.origin
-        o.pull()
         # go to script folder to import main file and all dependencies
-        sys.path.insert(0, "scripts/ItemFarming/AmuletFarming")
+        sys.path.insert(0, "scripts/PokemonScripts/ItemFarming/AmuletFarming")
         import AmuletFarming
         AmuletFarming.run(n, t)
