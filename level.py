@@ -105,6 +105,10 @@ class Ui_LevelUI(object):
         self.verticalLayout_3.setContentsMargins(5, 0, -1, 0)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.breedBtn = QtWidgets.QPushButton(parent=self.scriptscontainer)
+        self.breedBtn.setObjectName("breedBtn")
+        self.breedBtn.setText("Breed")
+        self.verticalLayout_3.addWidget(self.breedBtn)
         self.itemBtn = QtWidgets.QPushButton(parent=self.scriptscontainer)
         self.itemBtn.setObjectName("itemBtn")
         self.verticalLayout_3.addWidget(self.itemBtn)
@@ -255,19 +259,22 @@ class Ui_LevelUI(object):
         self.threadpool = QThreadPool()
 
         self.homeBtn.clicked.connect(self.hide_status)
-        self.homeBtn.clicked.connect(open_home_ui)
+        self.homeBtn.clicked.connect(lambda: open_ui("home"))
 
         self.settingsBtn.clicked.connect(self.hide_status)
-        self.settingsBtn.clicked.connect(open_settings_ui)
+        self.settingsBtn.clicked.connect(lambda: open_ui("settings"))
+
+        self.breedBtn.clicked.connect(self.hide_status)
+        self.breedBtn.clicked.connect(lambda: open_ui("breed"))
 
         self.itemBtn.clicked.connect(self.hide_status)
-        self.itemBtn.clicked.connect(open_item_ui)
+        self.itemBtn.clicked.connect(lambda: open_ui("item"))
 
         self.plantingBtn.clicked.connect(self.hide_status)
-        self.plantingBtn.clicked.connect(open_plant_ui)
+        self.plantingBtn.clicked.connect(lambda: open_ui("plant"))
 
         self.pokemonBtn.clicked.connect(self.hide_status)
-        self.pokemonBtn.clicked.connect(open_pokemon_ui)
+        self.pokemonBtn.clicked.connect(lambda: open_ui("pokemon"))
 
         self.runBtn.clicked.connect(self.run_level_farming)
         self.runBtn.setAutoDefault(True)
@@ -335,39 +342,11 @@ class Ui_LevelUI(object):
         self.label.setText(_translate("MainWindow", "Logs"))
 
 
-def open_home_ui():
+def open_ui(ui_name):
     global window, uis
     for p in multiprocessing.active_children():
         p.terminate()
-    uis["home"].setupUi(window, uis)
-
-
-def open_settings_ui():
-    global window, uis
-    for p in multiprocessing.active_children():
-        p.terminate()
-    uis["settings"].setupUi(window, uis)
-
-
-def open_item_ui():
-    global window, uis
-    for p in multiprocessing.active_children():
-        p.terminate()
-    uis["item"].setupUi(window, uis)
-
-
-def open_plant_ui():
-    global window, uis
-    for p in multiprocessing.active_children():
-        p.terminate()
-    uis["plant"].setupUi(window, uis)
-
-
-def open_pokemon_ui():
-    global window, uis
-    for p in multiprocessing.active_children():
-        p.terminate()
-    uis["pokemon"].setupUi(window, uis)
+    uis[ui_name].setupUi(window, uis)
 
 
 def run_script(n):

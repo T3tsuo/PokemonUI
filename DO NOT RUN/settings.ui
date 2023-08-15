@@ -132,6 +132,13 @@
            <number>0</number>
           </property>
           <item>
+           <widget class="QPushButton" name="breedBtn">
+            <property name="text">
+             <string>Breed</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="itemBtn">
             <property name="text">
              <string>Item</string>
@@ -372,8 +379,8 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>451</width>
-               <height>196</height>
+               <width>444</width>
+               <height>186</height>
               </rect>
              </property>
              <property name="styleSheet">

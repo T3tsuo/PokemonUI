@@ -137,16 +137,16 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="itemBtn">
+           <widget class="QPushButton" name="breedBtn">
             <property name="text">
-             <string>Item</string>
+             <string>Breed</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pokemonBtn">
+           <widget class="QPushButton" name="itemBtn">
             <property name="text">
-             <string>Pokemon</string>
+             <string>Item</string>
             </property>
            </widget>
           </item>
@@ -161,6 +161,13 @@
            <widget class="QPushButton" name="plantingBtn">
             <property name="text">
              <string>Planting</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pokemonBtn">
+            <property name="text">
+             <string>Pokemon</string>
             </property>
            </widget>
           </item>

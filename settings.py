@@ -13,39 +13,11 @@ window = None
 uis = {}
 
 
-def open_home_ui():
+def open_ui(ui_name):
     global window, uis
     for p in multiprocessing.active_children():
         p.terminate()
-    uis["home"].setupUi(window, uis)
-
-
-def open_item_ui():
-    global window, uis
-    for p in multiprocessing.active_children():
-        p.terminate()
-    uis["item"].setupUi(window, uis)
-
-
-def open_level_ui():
-    global window, uis
-    for p in multiprocessing.active_children():
-        p.terminate()
-    uis["level"].setupUi(window, uis)
-
-
-def open_plant_ui():
-    global window, uis
-    for p in multiprocessing.active_children():
-        p.terminate()
-    uis["plant"].setupUi(window, uis)
-
-
-def open_pokemon_ui():
-    global window, uis
-    for p in multiprocessing.active_children():
-        p.terminate()
-    uis["pokemon"].setupUi(window, uis)
+    uis[ui_name].setupUi(window, uis)
 
 
 class Ui_SettingsUI(object):
@@ -112,6 +84,10 @@ class Ui_SettingsUI(object):
         self.verticalLayout_3.setContentsMargins(5, 0, -1, 0)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.breedBtn = QtWidgets.QPushButton(parent=self.scriptscontainer)
+        self.breedBtn.setObjectName("breedBtn")
+        self.breedBtn.setText("Breed")
+        self.verticalLayout_3.addWidget(self.breedBtn)
         self.itemBtn = QtWidgets.QPushButton(parent=self.scriptscontainer)
         self.itemBtn.setObjectName("itemBtn")
         self.verticalLayout_3.addWidget(self.itemBtn)
@@ -310,11 +286,12 @@ class Ui_SettingsUI(object):
 
         self.gmailBtn.clicked.connect(self.gmail_options)
         self.gamepathBtn.clicked.connect(self.gamepath_options)
-        self.homeBtn.clicked.connect(open_home_ui)
-        self.itemBtn.clicked.connect(open_item_ui)
-        self.levelBtn.clicked.connect(open_level_ui)
-        self.plantingBtn.clicked.connect(open_plant_ui)
-        self.pokemonBtn.clicked.connect(open_pokemon_ui)
+        self.homeBtn.clicked.connect(lambda: open_ui("home"))
+        self.breedBtn.clicked.connect(lambda: open_ui("breed"))
+        self.itemBtn.clicked.connect(lambda: open_ui("item"))
+        self.levelBtn.clicked.connect(lambda: open_ui("level"))
+        self.plantingBtn.clicked.connect(lambda: open_ui("plant"))
+        self.pokemonBtn.clicked.connect(lambda: open_ui("pokemon"))
 
     def gamepath_options(self):
         global uis, window

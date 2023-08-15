@@ -46,14 +46,16 @@ if __name__ == "__main__":
     HomeWindow = QtWidgets.QMainWindow()
     from home import Ui_HomeUI
     from settings import Ui_SettingsUI
+    from breed import Ui_BreedUI
     from item import Ui_ItemUI
     from level import Ui_LevelUI
     from plant import Ui_PlantUI
     from pokemon import Ui_PokemonUI
     from gmail import Ui_GmailUI
     from gamepath import Ui_GamePathUI
-    uis = {"home": Ui_HomeUI(), "settings": Ui_SettingsUI(), "item": Ui_ItemUI(), "level": Ui_LevelUI(),
-           "plant": Ui_PlantUI(), "pokemon": Ui_PokemonUI(), "gmail": Ui_GmailUI(), "gamepath": Ui_GamePathUI()}
+    uis = {"home": Ui_HomeUI(), "settings": Ui_SettingsUI(), "breed": Ui_BreedUI(), "item": Ui_ItemUI(),
+           "level": Ui_LevelUI(), "plant": Ui_PlantUI(), "pokemon": Ui_PokemonUI(), "gmail": Ui_GmailUI(),
+           "gamepath": Ui_GamePathUI()}
     uis["home"].setupUi(HomeWindow, uis)
     if window_position is not None:
         HomeWindow.move(window_position)
