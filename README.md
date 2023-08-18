@@ -49,7 +49,7 @@ or when the script has finished running.
 ## Sinnoh
 
 ## Where to start running the code:
-* Script will always try to toggle run on.
+* Script will always try to toggle run on so make sure character is WALKING before pressing start.
 * Start at the nurse in the pokecenter at Oreburgh City.
 * 2.30 is the amount of hours.minutes, so the program will run for 2 hours and 30 minutes.
 * sweet scent costs 5pp per use, so if you have 32pp then enter: 6
@@ -73,7 +73,7 @@ or when the script has finished running.
 ## Kanto
 
 ## Where to start running the code:
-* Script will always try to toggle run on.
+* Script will always try to toggle run on so make sure character is WALKING before pressing start.
 * Start at the nurse in the pokecenter at Cerulean City.
 * Must have HM Cut
 * 2.30 is the amount of hours.minutes, so the program will run for 2 hours and 30 minutes.
@@ -114,7 +114,7 @@ or when the script has finished running.
 ## Unova
 
 ## Where to start running the code:
-* Script will always try to toggle run on.
+* Script will always try to toggle run on so make sure character is WALKING before pressing start.
 * Start at the nurse in the pokecenter at Lacunosa Town.
 * Sweet scent uses 5pp per usage. So if you have 32pp then enter: 6
     * If you have 20pp, then enter: 4
@@ -134,7 +134,7 @@ or when the script has finished running.
 ## Hoenn
 
 ## Where to start running the code:
-* Script will always try to toggle run on.
+* Script will always try to toggle run on so make sure character is WALKING before pressing start.
 * Start at the nurse in the pokecenter at Fallarbor Town.
 * Enter the total amount of duskballs the user currently has
 * As soon as you hit start, make sure you click on the game.
