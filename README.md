@@ -31,7 +31,7 @@ Emails you when game encounters a shiny (the script will end itself when it enco
 or when the script has finished running.
 
 ## Setup:
-* Generate google app password for account
+* Generate google app password for account [Sign in with app passwords](https://support.google.com/accounts/answer/185833?hl=en)
 * Press the gear icon in the app, press Add under Gmail Notify and input email address and correlated app password (only needs to be ran once)
 
 ## Delete:
