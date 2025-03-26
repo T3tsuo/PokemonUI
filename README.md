@@ -20,7 +20,7 @@ correct any path it misses (currently working for Ditto Farm, Amulet Farming and
 * For Item finding, it will make sure to read the latest battle log only and not read older battle logs by knowing where your game is on your screen.
 
 ## Setup (Prerequisite):
-* Need git installed and added to path (Git Download)[https://git-scm.com/downloads]
+* Need git installed and added to path [Git Download](https://git-scm.com/downloads)
 * Press the gear icon in the app, press Add under Game Path and paste the directory path (only needs to be ran once).
 
 ## Delete:
