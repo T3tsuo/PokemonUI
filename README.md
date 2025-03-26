@@ -8,7 +8,8 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 
 ## Setup (Prerequisite):
 * Need git installed and added to path [Git Download](https://git-scm.com/downloads)
-* Press the gear icon in the app, press Add under Game Path and paste the directory path (only needs to be ran once).
+* Press the gear icon in the app, press Add under Game Path and paste the directory path (only needs to be ran once). Game path should look like:
+  * C:\Program Files (x86)\PokeMMO
 
 ## Delete:
 * To delete, just press the gear icon in the app, and press Remove under Game Path.
