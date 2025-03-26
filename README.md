@@ -20,12 +20,12 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Extract the 'black_battle_options.zip' and add it as a custom theme (search up how to add custom themes to the game).
 
 # Path Correction/Item Farming Setup:
-* Press the gear icon in the app, press Add under Game Path and paste the directory path (only needs to be ran once). Game path should look something like:
-  * C:\Program Files (x86)\PokeMMO
-Explanation:
 * Sometimes the script will overshoot/undershoot the path the player takes. Setting this up will help the script 
 correct any path it misses (currently working for Ditto Farm, Amulet Farming and Everstone Farming).
 * For Item finding, it will make sure to read the latest battle log only and not read older battle logs by knowing where your game is on your screen.
+## Setup
+* Press the gear icon in the app, press Add under Game Path and paste the directory path (only needs to be ran once). Game path should look something like:
+  * C:\Program Files (x86)\PokeMMO
 
 # Gmail Notification:
 ## This is optional
