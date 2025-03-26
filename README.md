@@ -19,7 +19,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Controls are default
 * Extract the 'black_battle_options.zip' and add it as a custom theme (search up how to add custom themes to the game).
 
-# Path Correction/Item Farming Setup:
+# Path Correction/Item Farming:
 * Sometimes the script will overshoot/undershoot the path the player takes. Setting this up will help the script 
 correct any path it misses (currently working for Ditto Farm, Amulet Farming and Everstone Farming).
 * For Item finding, it will make sure to read the latest battle log only and not read older battle logs by knowing where your game is on your screen.
