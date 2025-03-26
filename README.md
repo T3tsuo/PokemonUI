@@ -17,7 +17,7 @@ Windows Security will flag this as a trojan as it runs scripts that control your
 * Set window size: 1280x720 in Settings.
 * Turn off, 'Show Overworld in Battle' and 'Show Battle Background' in Settings/Video.
 * Controls are default
-* Extract the 'black_battle_options.zip' and add it as a custom theme (search up how to add custom themes to the game).
+* Extract the 'black_battle_options.zip', rename the folder as default and replace the default theme of PokeMMO. Search up if unsure how to find PokeMMO theme folder.
 
 # Path Correction/Item Farming:
 * Sometimes the script will overshoot/undershoot the path the player takes. Setting this up will help the script 
