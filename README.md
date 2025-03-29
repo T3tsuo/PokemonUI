@@ -45,6 +45,7 @@ or when the script has finished running.
 * [Plant or Water](#plant-or-water)
 * [Level Farming](#level-farming)
 * [Ditto Farm](#ditto-farm)
+* [Breed Farm with Ditto](#breed-farm-with-ditto)
 
 # Farming Everstones 
 ## Sinnoh
@@ -154,3 +155,14 @@ or when the script has finished running.
 * Teleport Ocarina in 5th key slot.
 * Dig Ocarina in the 6th key slot.
 
+# Breed Farm with Ditto
+
+## Where to start running the code:
+* Start at daycare facing the daycare man.
+
+## Pokemon Team Composition:
+* (Optional) Have a pokemon in your first slot of your party with the ability Flame Body for the eggs to hatch quicker.
+* Have the pokemon you want to breed with ditto in your party.
+
+## PC Box
+* Have a box of Dittos in Box 5.
