@@ -159,6 +159,7 @@ or when the script has finished running.
 
 ## Where to start running the code:
 * Start at daycare facing the daycare man.
+* As soon as you hit start, make sure you click on the game.
 
 ## Pokemon Team Composition:
 * (Optional) Have a pokemon in your first slot of your party with the ability Flame Body for the eggs to hatch quicker.
