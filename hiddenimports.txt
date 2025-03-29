@@ -5,3 +5,5 @@ opencv-python
 smtplib
 
 pyinstaller --noconfirm --onedir --windowed --icon "C:\PokemonUI\feather\poke.ico" --contents-directory "." --hidden-import "pyautogui" --hidden-import "pydirectinput" --hidden-import "requests" --hidden-import "opencv-python" --hidden-import "smtplib"  "C:\PokemonUI\controller.py"
+
+Remember to move window-config, feather and scripts folder into outputted EXE folder
