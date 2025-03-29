@@ -148,7 +148,7 @@ or when the script has finished running.
    * hp ev 6, atk ev 252, def ev 252
    * Holding LeftOvers
 * Second pokemon is Parasect.
-    * Has Counter, Dig, Spore, Endure
+    * Has Dig, Spore
 
 ## Key Slots:
 * Bike in 1st key slot.
