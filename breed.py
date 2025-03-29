@@ -200,11 +200,12 @@ class Ui_BreedUI(object):
         font = QtGui.QFont()
         font.setPointSize(14)
         self.breedcombo.setFont(font)
-        self.breedcombo.setStyleSheet("background-color: transparent; color: white; margin: 10px;")
-        self.breedcombo.setPlaceholderText("")
+        self.breedcombo.setStyleSheet("background-color: #1f232a; color: white;")
         self.breedcombo.setObjectName("breedcombo")
-        self.breedcombo.addItem("--")
-        self.breedcombo.addItem("Eevee")
+        items = ["--", "Eevee"]
+        for i in range(len(items)):
+            self.breedcombo.addItem(items[i])
+        self.breedcombo.setMinimumContentsLength(len(max(items, key=len)))
         self.verticalLayout_8.addWidget(self.breedcombo, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
         self.verticalLayout_6.addWidget(self.subconfigitem, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum,

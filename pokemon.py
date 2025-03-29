@@ -9,7 +9,6 @@ import sys
 from PyQt6 import QtCore, QtGui, QtWidgets
 import multiprocessing, time, os
 from PyQt6.QtCore import QRunnable, pyqtSlot, QThreadPool
-from git import Repo
 
 from thread_workers import WorkerSignal
 
@@ -178,17 +177,18 @@ class Ui_PokemonUI(object):
         font = QtGui.QFont()
         font.setPointSize(14)
         self.pokecombo.setFont(font)
-        self.pokecombo.setStyleSheet("background-color: transparent; color: white; margin: 10px;")
+        self.pokecombo.setStyleSheet("background-color: #1f232a; color: white;")
         self.pokecombo.setObjectName("pokecombo")
-        self.pokecombo.setPlaceholderText("")
-        self.pokecombo.addItem("--")
-        self.pokecombo.addItem("Ditto")
+        items = ["--", "Ditto"]
+        for i in range(len(items)):
+            self.pokecombo.addItem(items[i])
+        self.pokecombo.setMinimumContentsLength(len(max(items, key=len)))
         self.verticalLayout_8.addWidget(self.pokecombo, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
         self.duskballs = QtWidgets.QTextEdit(parent=self.subconfigitem)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.duskballs.setFont(font)
-        self.duskballs.setStyleSheet("background-color: transparent; border: 1px solid white;")
+        self.duskballs.setStyleSheet("background-color: transparent; border: 1px solid white; margin-top: 10px;")
         self.duskballs.setObjectName("duskballs")
         self.verticalLayout_8.addWidget(self.duskballs)
         self.verticalLayout_6.addWidget(self.subconfigitem, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)

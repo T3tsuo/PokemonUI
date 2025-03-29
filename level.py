@@ -11,7 +11,6 @@ import time, os
 import multiprocessing
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import QRunnable, pyqtSlot, QThreadPool
-from git import Repo
 
 from thread_workers import WorkerSignal
 

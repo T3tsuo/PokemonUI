@@ -11,7 +11,6 @@ import time, os
 import multiprocessing
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import QRunnable, pyqtSlot, QThreadPool
-from git import Repo
 
 from thread_workers import WorkerSignal
 
@@ -175,23 +174,25 @@ class Ui_PlantUI(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.placeCombo = QtWidgets.QComboBox(parent=self.subconfigitem)
         font = QtGui.QFont()
-        font.setPointSize(16)
+        font.setPointSize(14)
         self.placeCombo.setFont(font)
-        self.placeCombo.setStyleSheet("background-color: transparent;")
+        self.placeCombo.setStyleSheet("background-color: #1f232a; color: white;")
         self.placeCombo.setObjectName("placeCombo")
-        self.placeCombo.addItem("")
-        self.placeCombo.addItem("Abundant Shrine")
-        self.placeCombo.addItem("Mistralton")
+        items = ["--", "Abundant Shrine", "Mistralton"]
+        for i in range(len(items)):
+            self.placeCombo.addItem(items[i])
+        self.placeCombo.setMinimumContentsLength(len(max(items, key=len)))
         self.horizontalLayout_2.addWidget(self.placeCombo)
         self.actionCombo = QtWidgets.QComboBox(parent=self.subconfigitem)
         font = QtGui.QFont()
-        font.setPointSize(16)
+        font.setPointSize(14)
         self.actionCombo.setFont(font)
-        self.actionCombo.setStyleSheet("background-color: transparent;")
+        self.actionCombo.setStyleSheet("background-color: #1f232a; color: white;")
         self.actionCombo.setObjectName("actionCombo")
-        self.actionCombo.addItem("")
-        self.actionCombo.addItem("Plant")
-        self.actionCombo.addItem("Water")
+        items = ["--", "Plant", "Water"]
+        for i in range(len(items)):
+            self.actionCombo.addItem(items[i])
+        self.actionCombo.setMinimumContentsLength(len(max(items, key=len)))
         self.horizontalLayout_2.addWidget(self.actionCombo)
         self.verticalLayout_6.addWidget(self.subconfigitem, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum,

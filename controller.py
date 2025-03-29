@@ -10,6 +10,10 @@ from git import Repo
 import multiprocessing
 import os
 import pickle
+import pyautogui
+
+# make sure we are no longer raising error when cannot find picture in pyautogui
+pyautogui.useImageNotFoundException(False)
 
 app = None
 

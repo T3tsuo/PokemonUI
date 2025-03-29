@@ -182,7 +182,6 @@ class Ui_ItemUI(object):
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.subconfigitem)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.itemcombo = QtWidgets.QComboBox(parent=self.subconfigitem)
-        self.itemcombo.setGeometry(QtCore.QRect(140, -20, 239, 47))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred,
                                            QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -192,12 +191,12 @@ class Ui_ItemUI(object):
         font = QtGui.QFont()
         font.setPointSize(14)
         self.itemcombo.setFont(font)
-        self.itemcombo.setStyleSheet("background-color: transparent; color: white; margin: 10px;")
-        self.itemcombo.setPlaceholderText("")
+        self.itemcombo.setStyleSheet("background-color: #1f232a; color: white;")
         self.itemcombo.setObjectName("itemcombo")
-        self.itemcombo.addItem("--")
-        self.itemcombo.addItem("Amulet Coin")
-        self.itemcombo.addItem("Everstone")
+        items = ["--", "Amulet Coin", "Everstone"]
+        for i in range(len(items)):
+            self.itemcombo.addItem(items[i])
+        self.itemcombo.setMinimumContentsLength(len(max(items, key=len)))
         self.verticalLayout_8.addWidget(self.itemcombo, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
         self.inputsubconfig = QtWidgets.QWidget(parent=self.subconfigitem)
         self.inputsubconfig.setObjectName("inputsubconfig")
