@@ -153,7 +153,7 @@ or when the script has finished running.
 ## Key Slots:
 * Bike in 1st key slot.
 * Teleport Ocarina in 5th key slot.
-* Dig Ocarina in the 6th key slot.
+* Dig in the 6th key slot.
 
 # Breed Farm with Ditto
 
