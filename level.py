@@ -350,6 +350,6 @@ def open_ui(ui_name):
 
 def run_script(n):
     # go to script folder to import main file and all dependencies
-    sys.path.insert(0, "scripts/PokemonScripts/LevelFarming")
+    sys.path.insert(0, "scripts/PokemonScripts-main/LevelFarming")
     import LevelFarming
     LevelFarming.run(n)

@@ -405,11 +405,11 @@ def open_ui(ui_name):
 def run_script(n, t, item):
     if item == "Everstone":
         # go to script folder to import main file and all dependencies
-        sys.path.insert(0, "scripts/PokemonScripts/ItemFarming/EverstoneFarming")
+        sys.path.insert(0, "scripts/PokemonScripts-main/ItemFarming/EverstoneFarming")
         import EverstoneFarming
         EverstoneFarming.run(n, t)
     elif item == "Amulet Coin":
         # go to script folder to import main file and all dependencies
-        sys.path.insert(0, "scripts/PokemonScripts/ItemFarming/AmuletFarming")
+        sys.path.insert(0, "scripts/PokemonScripts-main/ItemFarming/AmuletFarming")
         import AmuletFarming
         AmuletFarming.run(n, t)

@@ -372,6 +372,6 @@ class Ui_BreedUI(object):
 def run_script(pokemon):
     if pokemon == "Eevee":
         # go to script folder to import main file and all dependencies
-        sys.path.insert(0, "scripts/PokemonScripts/BreedFarming/EeveeBreed")
+        sys.path.insert(0, "scripts/PokemonScripts-main/BreedFarming/EeveeBreed")
         import EeveeBreed
         EeveeBreed.run()

@@ -368,6 +368,6 @@ def open_ui(ui_name):
 def run_script(n, pokemon):
     if pokemon == "Ditto":
         # go to script folder to import main file and all dependencies
-        sys.path.insert(0, "scripts/PokemonScripts/PokemonFarming/DittoFarm")
+        sys.path.insert(0, "scripts/PokemonScripts-main/PokemonFarming/DittoFarm")
         import DittoFarm
         DittoFarm.run(n)

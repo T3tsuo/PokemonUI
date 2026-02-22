@@ -370,6 +370,6 @@ def open_ui(ui_name):
 
 def run_script(place, action):
     # go to script folder to import main file and all dependencies
-    sys.path.insert(0, "scripts/PokemonScripts/PlantorWater")
+    sys.path.insert(0, "scripts/PokemonScripts-main/PlantorWater")
     import PlantorWater
     PlantorWater.run(place, action)
